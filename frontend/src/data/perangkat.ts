@@ -48,10 +48,10 @@ export const kepalaDusun: Perangkat[] = [{
   kelompok: `Dusun Kayee Unoe`,
 }];
 
-#export const kepalaDusun: Perangkat[] = #penduduk.dusun.map((d) => ({
-#  nama: `Nama Kadus ${d.nama}`,
-#  jabatan: 'Kepala Dusun (Kadus)',
-#  kelompok: `Dusun ${d.nama}`,
-#}));
+/** export const kepalaDusun: Perangkat[] = penduduk.dusun.map((d) => ({
+  nama: `Nama Kadus ${d.nama}`,
+  jabatan: 'Kepala Dusun (Kadus)',
+  kelompok: `Dusun ${d.nama}`,
+}));*/
 
 export const perangkat: Perangkat[] = [keuchik, ...sekretariat, ...kaurKasi, ...kepalaDusun];
