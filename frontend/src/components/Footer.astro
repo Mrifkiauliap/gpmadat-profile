@@ -1,0 +1,99 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site } from '../data/site';
+import { kontak } from '../data/kontak';
+
+const year = new Date().getFullYear();
+
+const tautan = [
+  { href: '/profil', label: 'Profil & Visi Misi' },
+  { href: '/pemerintahan', label: 'Struktur Pemerintahan' },
+  { href: '/penduduk', label: 'Data Penduduk' },
+  { href: '/potensi', label: 'Potensi & UMKM' },
+  { href: '/kegiatan', label: 'Kegiatan Gampong' },
+  { href: '/peta', label: 'Peta Wilayah' },
+];
+---
+
+<footer class="mt-24 bg-padi-950 text-paper-3">
+  <div class="motif-band"></div>
+
+  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+    <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <div class="flex items-center gap-3.5">
+          {
+            site.logo && (
+              <img
+                src={site.logo}
+                alt={`Lambang ${site.name}`}
+                width="52"
+                height="52"
+                loading="lazy"
+                class="h-13 w-13 shrink-0 object-contain"
+              />
+            )
+          }
+          <div>
+            <p class="font-display text-2xl font-semibold tracking-tight text-paper">{site.name}</p>
+            <p class="mt-1 text-[0.6875rem] font-medium uppercase tracking-[0.16em] text-padi-300">
+              {site.kecamatan} • {site.kabupaten}
+            </p>
+          </div>
+        </div>
+        <p class="mt-4 max-w-sm text-sm leading-relaxed text-paper-3/75">
+          Portal resmi Gampong Madat sebagai sarana keterbukaan informasi publik mengenai profil
+          desa, aparatur, data penduduk, dan potensi warga.
+        </p>
+      </div>
+
+      <div>
+        <p class="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-clay-300">
+          Navigasi
+        </p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {
+            tautan.map((t) => (
+              <li>
+                <a
+                  href={t.href}
+                  class="inline-flex items-center gap-2 text-paper-3/80 transition-colors hover:text-paper"
+                >
+                  <Icon name="lucide:chevron-right" class="h-3.5 w-3.5 text-clay-400" />
+                  {t.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-clay-300">
+          Kantor Gampong
+        </p>
+        <ul class="mt-4 space-y-3 text-sm text-paper-3/80">
+          <li class="flex gap-2.5">
+            <Icon name="lucide:map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-clay-400" />
+            <span class="leading-relaxed">{kontak.alamat}</span>
+          </li>
+          <li class="flex gap-2.5">
+            <Icon name="lucide:clock" class="mt-0.5 h-4 w-4 shrink-0 text-clay-400" />
+            <span>{kontak.jamLayanan}</span>
+          </li>
+          <li class="flex gap-2.5">
+            <Icon name="lucide:mail" class="mt-0.5 h-4 w-4 shrink-0 text-clay-400" />
+            <span>{kontak.email}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-12 flex flex-col gap-2 border-t border-padi-800 pt-6 text-xs text-paper-3/55 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>&copy; {year} Pemerintah {site.name}. Hak cipta dilindungi undang-undang.</p>
+      <p>{site.kabupaten} • Provinsi {site.provinsi}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,120 @@
+---
+import { Icon } from 'astro-icon/components';
+import { site } from '../data/site';
+
+const navItems = [
+  { href: '/', label: 'Beranda' },
+  { href: '/profil', label: 'Profil' },
+  { href: '/pemerintahan', label: 'Pemerintahan' },
+  { href: '/penduduk', label: 'Penduduk' },
+  { href: '/potensi', label: 'Potensi' },
+  { href: '/kegiatan', label: 'Kegiatan' },
+  { href: '/galeri', label: 'Galeri' },
+  { href: '/peta', label: 'Peta' },
+  { href: '/kontak', label: 'Kontak' },
+];
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) =>
+  href === '/' ? currentPath === '/' : currentPath.startsWith(href);
+---
+
+<header class="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5 sm:px-8">
+    <a href="/" class="group flex items-center gap-3">
+      {
+        site.logo ? (
+          <img
+            src={site.logo}
+            alt={`Lambang ${site.name}`}
+            width="44"
+            height="44"
+            class="h-11 w-11 shrink-0 object-contain"
+          />
+        ) : (
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-padi-800 font-display text-base font-semibold text-paper">
+            {site.shortName}
+          </span>
+        )
+      }
+      <span class="leading-tight">
+        <span class="block font-display text-[1.0625rem] font-semibold tracking-tight text-padi-900">
+          {site.name}
+        </span>
+        <span class="block text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-ink-3">
+          {site.kecamatan}
+        </span>
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-0.5 xl:flex">
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              'relative px-3 py-2 text-[0.8125rem] font-medium transition-colors',
+              isActive(item.href)
+                ? 'text-padi-800'
+                : 'text-ink-2 hover:text-padi-700',
+            ]}
+          >
+            {item.label}
+            {isActive(item.href) && (
+              <span class="absolute inset-x-3 -bottom-0.5 h-[2px] bg-clay-500" />
+            )}
+          </a>
+        ))
+      }
+    </nav>
+
+    <button
+      id="nav-toggle"
+      type="button"
+      class="inline-flex items-center justify-center rounded-[3px] border border-line p-2 text-padi-800 transition-colors hover:bg-paper-2 xl:hidden"
+      aria-label="Buka menu navigasi"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <Icon id="icon-open" name="lucide:menu" class="h-5 w-5" />
+      <Icon id="icon-close" name="lucide:x" class="hidden h-5 w-5" />
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="hidden border-t border-line bg-paper px-5 pb-5 pt-2 sm:px-8 xl:hidden"
+  >
+    {
+      navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'flex items-center justify-between border-b border-line/60 py-3 text-sm font-medium transition-colors last:border-0',
+            isActive(item.href) ? 'text-padi-800' : 'text-ink-2 hover:text-padi-700',
+          ]}
+        >
+          {item.label}
+          {isActive(item.href) && <span class="h-1.5 w-1.5 rounded-full bg-clay-500" />}
+        </a>
+      ))
+    }
+  </nav>
+
+  <div class="motif-band opacity-70"></div>
+</header>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const willOpen = menu?.classList.contains('hidden') ?? false;
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(willOpen));
+  });
+</script>

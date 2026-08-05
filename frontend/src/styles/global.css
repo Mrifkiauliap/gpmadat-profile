@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Sistem desain Gampong Madat
+   Arah visual: "editorial heritage" — kertas hangat, hijau padi, aksen tanah
+   liat, tipografi serif berkarakter. Sengaja dibedakan dari portal desa
+   kebanyakan yang memakai biru korporat.
+   ========================================================================== */
+
+@theme {
+  /* --- Tipografi --- */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-archivo);
+
+  /* --- Kertas & tinta --- */
+  --color-paper: #faf6ef;
+  --color-paper-2: #f4ede0;
+  --color-paper-3: #ece2d1;
+  --color-line: #ded2bd;
+  --color-ink: #1b1712;
+  --color-ink-2: #4a4237;
+  --color-ink-3: #7c7263;
+
+  /* --- Hijau padi (warna utama) --- */
+  --color-padi-50: #f1f7f3;
+  --color-padi-100: #dcece1;
+  --color-padi-200: #bad9c6;
+  --color-padi-300: #8dbfa3;
+  --color-padi-400: #5b9e7c;
+  --color-padi-500: #38805e;
+  --color-padi-600: #276849;
+  --color-padi-700: #1f523a;
+  --color-padi-800: #1a4130;
+  --color-padi-900: #163628;
+  --color-padi-950: #0a1f17;
+
+  /* --- Tanah liat (aksen) --- */
+  --color-clay-50: #fdf5ef;
+  --color-clay-100: #f9e7d8;
+  --color-clay-200: #f1ccb0;
+  --color-clay-300: #e5a97e;
+  --color-clay-400: #d9854f;
+  --color-clay-500: #c96f35;
+  --color-clay-600: #b3562a;
+  --color-clay-700: #944225;
+  --color-clay-800: #783725;
+  --color-clay-900: #632f21;
+
+  /* --- Radius: tegas, bukan pill --- */
+  --radius-card: 4px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Butiran halus supaya latar terasa seperti kertas, bukan layar kosong. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  }
+
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-clay-200);
+    color: var(--color-padi-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-padi-600);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* --- Label bagian: teks kecil berspasi lebar dengan garis pendek --- */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-clay-700);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background-color: var(--color-clay-500);
+  }
+
+  /* --- Kartu bergaya cetak: garis tipis, tanpa bayangan berat --- */
+  .card {
+    background-color: #fffdf9;
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    transition:
+      border-color 200ms ease,
+      transform 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  .card-hover:hover {
+    border-color: var(--color-padi-400);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -18px rgb(22 54 40 / 0.45);
+  }
+
+  /* --- Pita motif geometris terinspirasi ragam hias Aceh --- */
+  .motif-band {
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10'%3E%3Cpath d='M12 0l5 5-5 5-5-5z' fill='%23c96f35' opacity='0.85'/%3E%3Cpath d='M0 5h3.5M20.5 5H24' stroke='%23276849' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 24px 10px;
+  }
+
+  /* --- Tombol --- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8125rem 1.375rem;
+    border-radius: var(--radius-card);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease,
+      border-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-primary {
+    background-color: var(--color-padi-800);
+    color: var(--color-paper);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-padi-950);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--color-padi-800);
+    color: var(--color-padi-800);
+  }
+
+  .btn-ghost:hover {
+    background-color: var(--color-padi-800);
+    color: var(--color-paper);
+  }
+
+  /* --- Tautan teks dengan garis bawah yang tumbuh --- */
+  .link-underline {
+    position: relative;
+    font-weight: 600;
+    color: var(--color-padi-700);
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color-clay-500);
+    transition: width 240ms ease;
+  }
+
+  .link-underline:hover::after {
+    width: 100%;
+  }
+
+  /* --- Angka besar bergaya editorial --- */
+  .stat-figure {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+}
+
+@layer utilities {
+  /* Muncul perlahan saat halaman dimuat; dimatikan bila pengguna
+     meminta gerakan minimal. */
+  .rise {
+    animation: rise 620ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise {
+      animation: none;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

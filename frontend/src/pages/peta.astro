@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { penduduk } from '../data/penduduk';
+import 'leaflet/dist/leaflet.css';
+---
+
+<Layout title="Peta Wilayah" description="Peta batas dusun Gampong Madat.">
+  <PageHeader
+    eyebrow="Lokasi Geografis"
+    title="Peta Wilayah Gampong"
+    description={`Batas ${penduduk.dusun.length} wilayah dusun di Gampong Madat, disusun dari data pemetaan QGIS.`}
+  />
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <div class="card overflow-hidden">
+      <div id="map" class="h-[520px] w-full"></div>
+      <div
+        id="map-legend"
+        class="flex flex-wrap items-center gap-x-6 gap-y-2.5 border-t border-line bg-paper-2/70 px-5 py-4 text-sm"
+      >
+      </div>
+    </div>
+
+    <p class="mt-4 text-xs leading-relaxed text-ink-3">
+      Klik salah satu wilayah pada peta untuk melihat nama dusun. Sumber data batas wilayah: hasil
+      pemetaan QGIS Gampong Madat (proyeksi WGS84 / EPSG:4326).
+    </p>
+  </section>
+</Layout>
+
+<script>
+  import L from 'leaflet';
+  import markerIcon from 'leaflet/dist/images/marker-icon.png';
+  import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+  import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconUrl: markerIcon,
+    iconRetinaUrl: markerIcon2x,
+    shadowUrl: markerShadow,
+  });
+
+  // Selaras dengan token warna di global.css (hijau padi + tanah liat).
+  const PALETTE = ['#1f523a', '#c96f35', '#38805e', '#944225', '#5b9e7c', '#e5a97e'];
+
+  const map = L.map('map', { scrollWheelZoom: false }).setView([5.1086, 97.5114], 14);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 19,
+  }).addTo(map);
+
+  // Nama dusun dibaca dari beberapa kemungkinan nama kolom, supaya file GeoJSON
+  // hasil export QGIS berikutnya tetap terbaca walau nama atributnya berbeda.
+  const NAME_KEYS = ['nama_dusun', 'nama', 'NAMA_DUSUN', 'NAMOBJ', 'name', 'label'];
+  const namaOf = (feature) => {
+    const props = feature?.properties ?? {};
+    const key = NAME_KEYS.find((k) => props[k]);
+    return key ? String(props[key]) : null;
+  };
+
+  // Warna ditentukan dari urutan feature, bukan dari atribut `id`, agar setiap
+  // wilayah tetap berbeda warna meski export baru tidak punya kolom id.
+  const colorIndex = new Map();
+  const colorFor = (feature) =>
+    PALETTE[(colorIndex.get(feature) ?? 0) % PALETTE.length];
+
+  fetch('/geojson/madat.geojson')
+    .then((res) => res.json())
+    .then((data) => {
+      const legend = document.getElementById('map-legend');
+      (data.features ?? []).forEach((f, i) => colorIndex.set(f, i));
+
+      const layer = L.geoJSON(data, {
+        style: (feature) => ({
+          color: colorFor(feature),
+          weight: 2,
+          fillColor: colorFor(feature),
+          fillOpacity: 0.22,
+        }),
+        onEachFeature: (feature, featureLayer) => {
+          const nama = namaOf(feature);
+          if (!nama) return;
+
+          featureLayer.bindPopup(`<strong>Dusun ${nama}</strong>`);
+
+          featureLayer.on({
+            mouseover: () => featureLayer.setStyle({ fillOpacity: 0.45, weight: 3 }),
+            mouseout: () => featureLayer.setStyle({ fillOpacity: 0.22, weight: 2 }),
+          });
+
+          if (legend) {
+            const item = document.createElement('button');
+            item.type = 'button';
+            item.className =
+              'inline-flex items-center gap-2 text-ink-2 transition-colors hover:text-padi-800';
+            item.innerHTML = `<span class="inline-block h-2.5 w-2.5 rounded-full" style="background:${colorFor(feature)}"></span>${nama}`;
+            item.addEventListener('click', () => {
+              map.fitBounds(featureLayer.getBounds(), { padding: [32, 32] });
+              featureLayer.openPopup();
+            });
+            legend.appendChild(item);
+          }
+        },
+      }).addTo(map);
+
+      const bounds = layer.getBounds();
+      if (bounds.isValid()) map.fitBounds(bounds, { padding: [28, 28] });
+    })
+    .catch((err) => console.error('Gagal memuat data GeoJSON:', err));
+</script>
+
+<style>
+  :global(.leaflet-container) {
+    font-family: var(--font-sans);
+    background-color: var(--color-paper-2);
+  }
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 3px;
+  }
+  :global(.leaflet-popup-content) {
+    font-size: 0.875rem;
+  }
+</style>

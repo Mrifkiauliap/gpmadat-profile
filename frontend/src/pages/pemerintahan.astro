@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import PlaceholderNotice from '../components/PlaceholderNotice.astro';
+import OfficialCard from '../components/OfficialCard.astro';
+import { keuchik, sekretariat, kaurKasi, kepalaDusun } from '../data/perangkat';
+import { site } from '../data/site';
+---
+
+<Layout
+  title="Struktur Pemerintahan"
+  description="Susunan Organisasi Tata Kerja (SOTK) Pemerintah Gampong Madat."
+>
+  <PageHeader
+    eyebrow="Pemerintahan Gampong"
+    title="Struktur Perangkat Desa"
+    description={`Susunan Organisasi Tata Kerja (SOTK) Pemerintah ${site.name}, ${site.kecamatan}, ${site.kabupaten}.`}
+  />
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <PlaceholderNotice message="Nama perangkat gampong di halaman ini masih contoh. Ganti dengan nama aparatur yang sebenarnya pada src/data/perangkat.ts." />
+
+    <!-- Pimpinan -->
+    <div class="mt-14">
+      <p class="eyebrow">Pimpinan Tertinggi</p>
+      <div class="mt-6 grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+        <OfficialCard {...keuchik} featured />
+        <div class="lg:pl-4">
+          <h2 class="font-display text-2xl font-semibold leading-snug text-padi-900">
+            Keuchik sebagai pemimpin penyelenggaraan pemerintahan gampong
+          </h2>
+          <p class="mt-3 leading-relaxed text-ink-2">
+            Keuchik memimpin penyelenggaraan pemerintahan, pembangunan, pembinaan kemasyarakatan,
+            dan pemberdayaan masyarakat gampong, dibantu oleh sekretariat, pelaksana teknis, serta
+            kepala dusun di setiap wilayah.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sekretariat -->
+    <div class="mt-16 border-t border-line pt-12">
+      <SectionHeading
+        eyebrow="Sekretariat"
+        title="Sekretariat Gampong"
+        description="Menangani urusan administrasi, ketatausahaan, dan dukungan kebijakan gampong."
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {sekretariat.map((p) => <OfficialCard {...p} />)}
+      </div>
+    </div>
+
+    <!-- Kaur & Kasi -->
+    <div class="mt-16 border-t border-line pt-12">
+      <SectionHeading
+        eyebrow="Pelaksana Teknis"
+        title="Kepala Urusan & Kepala Seksi"
+        description="Pelaksana teknis operasional dan administrasi pelayanan kepada masyarakat gampong."
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2">
+        {kaurKasi.map((p) => <OfficialCard {...p} />)}
+      </div>
+    </div>
+
+    <!-- Kepala Dusun -->
+    <div class="mt-16 border-t border-line pt-12">
+      <SectionHeading
+        eyebrow="Wilayah Kerja"
+        title="Kepala Dusun"
+        description="Pemimpin wilayah tingkat dusun, sesuai pembagian wilayah pada peta gampong."
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2">
+        {kepalaDusun.map((p) => <OfficialCard {...p} />)}
+      </div>
+
+      <a href="/peta" class="link-underline mt-8 inline-block text-sm">
+        Lihat batas wilayah tiap dusun pada peta
+      </a>
+    </div>
+  </section>
+</Layout>

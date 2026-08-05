@@ -1,0 +1,49 @@
+---
+interface Props {
+  title: string;
+  date: Date | string;
+  excerpt: string;
+  cover?: string;
+  href: string;
+}
+
+const { title, date, excerpt, cover, href } = Astro.props;
+const d = new Date(date);
+const hari = d.toLocaleDateString('id-ID', { day: '2-digit' });
+const bulan = d.toLocaleDateString('id-ID', { month: 'short' });
+const tahun = d.getFullYear();
+---
+
+<a href={href} class="card card-hover group flex flex-col overflow-hidden">
+  <div class="relative aspect-[16/10] overflow-hidden bg-paper-2">
+    {
+      cover && (
+        <img
+          src={cover}
+          alt=""
+          loading="lazy"
+          class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+        />
+      )
+    }
+    <div
+      class="absolute left-4 top-4 flex flex-col items-center bg-padi-900/95 px-2.5 py-1.5 text-paper backdrop-blur-sm"
+    >
+      <span class="stat-figure text-lg">{hari}</span>
+      <span class="text-[0.5625rem] font-semibold uppercase tracking-[0.12em] text-padi-200">
+        {bulan}
+      </span>
+    </div>
+  </div>
+
+  <div class="flex flex-1 flex-col p-5">
+    <p class="text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-ink-3">{tahun}</p>
+    <h3
+      class="mt-1.5 font-display text-lg font-semibold leading-snug text-padi-900 transition-colors group-hover:text-clay-700"
+    >
+      {title}
+    </h3>
+    <p class="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-2">{excerpt}</p>
+    <span class="mt-4 text-[0.8125rem] font-semibold text-clay-700">Baca selengkapnya →</span>
+  </div>
+</a>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0a1f17"/>
+
+  <g fill="#faf6ef" opacity="0.07">
+    <circle cx="80" cy="80" r="2"/><circle cx="180" cy="80" r="2"/><circle cx="280" cy="80" r="2"/>
+    <circle cx="980" cy="540" r="2"/><circle cx="1080" cy="540" r="2"/><circle cx="1130" cy="470" r="2"/>
+  </g>
+
+  <circle cx="1080" cy="120" r="230" fill="#c96f35" opacity="0.16"/>
+
+  <g transform="translate(96 176)">
+    <rect x="0" y="0" width="52" height="3" fill="#c96f35"/>
+    <text x="0" y="34" font-family="Georgia, serif" font-size="21" letter-spacing="4" fill="#e5a97e">
+      KECAMATAN MADAT — ACEH TIMUR
+    </text>
+    <text x="-4" y="132" font-family="Georgia, serif" font-size="96" font-weight="bold" fill="#faf6ef">
+      Gampong Madat
+    </text>
+    <text x="0" y="192" font-family="Georgia, serif" font-size="34" font-style="italic" fill="#bad9c6">
+      Portal Resmi Profil Gampong
+    </text>
+    <text x="0" y="258" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#8dbfa3">
+      Profil · Pemerintahan · Penduduk · Potensi · Peta Wilayah
+    </text>
+  </g>
+
+  <g transform="translate(0 606)">
+    <rect width="1200" height="24" fill="#0a1f17"/>
+    <g fill="#c96f35">
+      <path d="M12 0l6 12-6 12-6-12z"/><path d="M60 0l6 12-6 12-6-12z"/><path d="M108 0l6 12-6 12-6-12z"/>
+      <path d="M156 0l6 12-6 12-6-12z"/><path d="M204 0l6 12-6 12-6-12z"/><path d="M252 0l6 12-6 12-6-12z"/>
+      <path d="M300 0l6 12-6 12-6-12z"/><path d="M348 0l6 12-6 12-6-12z"/><path d="M396 0l6 12-6 12-6-12z"/>
+      <path d="M444 0l6 12-6 12-6-12z"/><path d="M492 0l6 12-6 12-6-12z"/><path d="M540 0l6 12-6 12-6-12z"/>
+      <path d="M588 0l6 12-6 12-6-12z"/><path d="M636 0l6 12-6 12-6-12z"/><path d="M684 0l6 12-6 12-6-12z"/>
+      <path d="M732 0l6 12-6 12-6-12z"/><path d="M780 0l6 12-6 12-6-12z"/><path d="M828 0l6 12-6 12-6-12z"/>
+      <path d="M876 0l6 12-6 12-6-12z"/><path d="M924 0l6 12-6 12-6-12z"/><path d="M972 0l6 12-6 12-6-12z"/>
+      <path d="M1020 0l6 12-6 12-6-12z"/><path d="M1068 0l6 12-6 12-6-12z"/><path d="M1116 0l6 12-6 12-6-12z"/>
+      <path d="M1164 0l6 12-6 12-6-12z"/>
+    </g>
+  </g>
+</svg>

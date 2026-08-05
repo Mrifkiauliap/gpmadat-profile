@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PlaceholderNotice from '../components/PlaceholderNotice.astro';
+import PotensiCard from '../components/PotensiCard.astro';
+import { potensi } from '../data/potensi';
+---
+
+<Layout title="Potensi Desa" description="Potensi ekonomi dan UMKM Gampong Madat.">
+  <PageHeader
+    eyebrow="Ekonomi & Usaha Warga"
+    title="Potensi Desa & UMKM"
+    description={`Terdapat ${potensi.length} sektor ekonomi utama yang menopang penghidupan warga Gampong Madat.`}
+  />
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <PlaceholderNotice message="Jumlah usaha per sektor masih angka contoh. Sesuaikan dengan pendataan UMKM gampong pada src/data/potensi.ts." />
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {potensi.map((p) => <PotensiCard {...p} />)}
+    </div>
+  </section>
+</Layout>

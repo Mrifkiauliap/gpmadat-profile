@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ActivityCard from '../../components/ActivityCard.astro';
+
+const kegiatan = (await getCollection('kegiatan')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Layout title="Kegiatan" description="Dokumentasi kegiatan Gampong Madat.">
+  <PageHeader
+    eyebrow="Dokumentasi"
+    title="Kegiatan Gampong"
+    description="Catatan kegiatan, program, dan aktivitas warga Gampong Madat dari waktu ke waktu."
+  />
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    {
+      kegiatan.length === 0 ? (
+        <p class="text-ink-3">Belum ada kegiatan yang dipublikasikan.</p>
+      ) : (
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {kegiatan.map((item) => (
+            <ActivityCard
+              title={item.data.title}
+              date={item.data.date}
+              excerpt={item.data.excerpt}
+              cover={item.data.cover}
+              href={`/kegiatan/${item.id}`}
+            />
+          ))}
+        </div>
+      )
+    }
+  </section>
+</Layout>

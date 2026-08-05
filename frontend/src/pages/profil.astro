@@ -1,0 +1,116 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import PlaceholderNotice from '../components/PlaceholderNotice.astro';
+import { profil } from '../data/profil';
+import { site } from '../data/site';
+
+const arahIcon: Record<string, string> = {
+  Utara: 'arrow-up',
+  Selatan: 'arrow-down',
+  Timur: 'arrow-right',
+  Barat: 'arrow-left',
+};
+---
+
+<Layout title="Profil Desa" description="Sejarah, visi, dan misi Gampong Madat.">
+  <PageHeader
+    eyebrow="Profil Gampong"
+    title={`Mengenal ${site.name}`}
+    description="Sejarah, visi dan misi, serta gambaran umum wilayah gampong."
+  />
+
+  <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <PlaceholderNotice message="Sejarah dan visi-misi di bawah ini masih teks contoh. Lengkapi dengan naskah resmi gampong pada src/data/profil.ts." />
+
+    <!-- Sejarah -->
+    <div class="mt-14 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <SectionHeading eyebrow="Sejarah" title="Asal-usul Gampong Madat" />
+      <div class="space-y-5">
+        {
+          profil.sejarah.map((p, i) => (
+            <p
+              class:list={[
+                'leading-[1.8] text-ink-2',
+                i === 0 && 'text-[1.0625rem] first-letter:float-left first-letter:mr-2.5 first-letter:font-display first-letter:text-[3.25rem] first-letter:font-semibold first-letter:leading-[0.85] first-letter:text-clay-600',
+              ]}
+            >
+              {p}
+            </p>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Visi & Misi -->
+    <div class="mt-16 border-t border-line pt-12">
+      <SectionHeading
+        eyebrow="Arah Pembangunan"
+        title="Visi & Misi Gampong"
+        description="Rumusan cita-cita dan langkah kerja pemerintah gampong."
+      />
+
+      <div class="mt-8 grid gap-6 lg:grid-cols-2">
+        <div class="relative overflow-hidden bg-padi-900 p-8">
+          <Icon name="lucide:target" class="h-7 w-7 text-clay-400" />
+          <p class="mt-5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-clay-300">
+            Visi
+          </p>
+          <p class="mt-3 font-display text-xl font-medium italic leading-relaxed text-paper">
+            “{profil.visi}”
+          </p>
+        </div>
+
+        <div class="card p-8">
+          <Icon name="lucide:scroll-text" class="h-7 w-7 text-padi-600" />
+          <p class="mt-5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-ink-3">
+            Misi
+          </p>
+          <ol class="mt-4 space-y-3.5">
+            {
+              profil.misi.map((m, i) => (
+                <li class="flex gap-3.5">
+                  <span class="stat-figure shrink-0 text-lg text-clay-500">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span class="text-[0.9375rem] leading-relaxed text-ink-2">{m}</span>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Batas wilayah -->
+    <div class="mt-16 border-t border-line pt-12">
+      <SectionHeading
+        eyebrow="Geografis"
+        title="Batas Wilayah"
+        description="Wilayah yang berbatasan langsung dengan Gampong Madat."
+      />
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          profil.batasWilayah.map((b) => (
+            <div class="card p-5">
+              <div class="flex items-center gap-2 text-padi-600">
+                <Icon name={`lucide:${arahIcon[b.arah] ?? 'compass'}`} class="h-4 w-4" />
+                <span class="text-[0.6875rem] font-semibold uppercase tracking-[0.14em]">
+                  Sebelah {b.arah}
+                </span>
+              </div>
+              <p class="mt-2.5 text-[0.9375rem] leading-snug text-ink-2">{b.keterangan}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <a href="/peta" class="link-underline mt-8 inline-block text-sm">
+        Lihat peta wilayah gampong
+      </a>
+    </div>
+  </section>
+</Layout>

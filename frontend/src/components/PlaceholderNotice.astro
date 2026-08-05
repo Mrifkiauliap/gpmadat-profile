@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  message?: string;
+}
+
+const {
+  message = 'Data pada halaman ini masih berupa contoh. Silakan perbarui dengan data resmi Gampong Madat.',
+} = Astro.props;
+---
+
+<div class="flex items-start gap-3 border-l-[3px] border-clay-500 bg-clay-50 px-4 py-3.5">
+  <Icon name="lucide:info" class="mt-0.5 h-4 w-4 shrink-0 text-clay-600" />
+  <p class="text-[0.8125rem] leading-relaxed text-clay-900">{message}</p>
+</div>
