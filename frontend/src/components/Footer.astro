@@ -89,19 +89,15 @@ const tautan = [
       </div>
     </div>
 
-    <div class="mt-12 border-t border-padi-800 pt-6">
-      <div
-        class="flex flex-col gap-2 text-xs text-paper-3/55 sm:flex-row sm:items-center sm:justify-between"
-      >
-        <p>&copy; {year} Pemerintah {site.name}. Hak cipta dilindungi undang-undang.</p>
-        <p>{site.kabupaten} • Provinsi {site.provinsi}</p>
-      </div>
-
-      <p class="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-paper-3/45">
-        Dibuat dengan
+    <div
+      class="mt-12 flex flex-col gap-3 border-t border-padi-800 pt-6 text-xs text-paper-3/55 sm:flex-row sm:items-center sm:justify-between"
+    >
+      <p>&copy; {year} Pemerintah {site.name}. Hak cipta dilindungi undang-undang.</p>
+      <p class="flex items-center gap-1.5">
         <Icon name="lucide:heart" class="h-3.5 w-3.5 fill-clay-500 text-clay-500" />
-        oleh <span class="font-semibold text-clay-300">KKN Kelompok 29 Unsam Tercinta</span>
+        <span class="font-semibold text-clay-300">KKN Kelompok 29 Unsam Tercinta</span>
       </p>
+      <p>{site.kabupaten} • Provinsi {site.provinsi}</p>
     </div>
   </div>
 </footer>
