@@ -13,9 +13,9 @@ export const profil = {
     'Melestarikan nilai-nilai keagamaan dan kearifan lokal masyarakat gampong.',
   ],
   batasWilayah: [
-    { arah: 'Utara', keterangan: 'Berbatasan dengan [Nama Gampong/Wilayah]' },
-    { arah: 'Selatan', keterangan: 'Berbatasan dengan [Nama Gampong/Wilayah]' },
-    { arah: 'Timur', keterangan: 'Berbatasan dengan [Nama Gampong/Wilayah]' },
-    { arah: 'Barat', keterangan: 'Berbatasan dengan [Nama Gampong/Wilayah]' },
+    { arah: 'Utara', keterangan: 'Berbatasan dengan Gampong Keupala Sa dan Gampong Keupala Dua' },
+    { arah: 'Selatan', keterangan: 'Berbatasan dengan Gampong Paya Demam Peut' },
+    { arah: 'Timur', keterangan: 'Berbatasan dengan Gampong Blang atau Kecamatan Simpang Ulim' },
+    { arah: 'Barat', keterangan: 'Berbatasan dengan Gampong Rambong Lop atau Matang Jrok' },
   ],
 };
