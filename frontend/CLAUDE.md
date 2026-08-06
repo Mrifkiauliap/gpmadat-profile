@@ -80,7 +80,11 @@ Nama dusun di `penduduk.ts` harus konsisten dengan `nama_dusun` di GeoJSON.
 
 ## Domain & Deploy
 
-`site` di `astro.config.mjs` saat ini `https://gp-madat.local` (dummy). Domain asli yang direncanakan: `gp-madat.web.id`. Saat berganti domain, ubah **dua tempat**: `site` di `astro.config.mjs` dan `domain` di `src/data/site.ts`. Nilai `site` inilah yang membentuk canonical URL, URL Open Graph, sitemap, dan baris `Sitemap:` di robots.txt.
+`site` di `astro.config.mjs` **tidak di-hardcode**. Nilainya diambil berurutan dari: `PUBLIC_SITE_URL` → `VERCEL_PROJECT_PRODUCTION_URL` (otomatis dari Vercel) → `http://localhost:4321`. Artinya canonical/OG/sitemap otomatis benar di Vercel, dan ikut berubah sendiri begitu domain kustom dipasang sebagai production domain di Vercel — tidak perlu edit kode.
+
+Jangan menaruh domain yang belum aktif di `site`: canonical yang menunjuk domain tak bisa diakses membuat halaman **tidak terindeks** mesin pencari.
+
+Astro dikonfigurasi `trailingSlash: 'never'` + `build.format: 'file'` agar selaras dengan `cleanUrls: true` / `trailingSlash: false` di `vercel.json`. Karena `build.format: 'file'` membuat `Astro.url.pathname` berakhiran `.html`, `Layout.astro` menormalkan pathname itu sebelum dipakai sebagai canonical.
 
 ## Status Data
 

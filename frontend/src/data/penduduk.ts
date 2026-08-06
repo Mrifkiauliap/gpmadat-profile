@@ -17,15 +17,39 @@ export const penduduk = {
   lakiLaki: 808,
   perempuan: 771,
   sumber:
-    'Sumber: Data Statistik Gampong Madat, Peta Gampong Madat — KKN Kelompok 29 Universitas Samudra Langsa (2026).',
+    "Sumber: Data Statistik Gampong Madat, Peta Gampong Madat — KKN Kelompok 29 Universitas Samudra Langsa (2026).",
   // Nama dusun mengikuti batas wilayah pada data GeoJSON hasil pemetaan QGIS.
   // Rincian jiwa/KK per dusun belum tersedia, sengaja dikosongkan agar tidak
   // menampilkan angka karangan pada situs resmi gampong.
   dusun: [
-    { nama: 'Cot Madat', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
-    { nama: 'Ali Tawil', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
-    { nama: 'Abeuk Gadeng', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
-    { nama: 'Kayee Unoe', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
+    {
+      nama: "Cot Madat",
+      jiwa: null,
+      kk: null,
+      lakiLaki: null,
+      perempuan: null,
+    },
+    {
+      nama: "Ali Tawil",
+      jiwa: null,
+      kk: null,
+      lakiLaki: null,
+      perempuan: null,
+    },
+    {
+      nama: "Abeuk Gadeng",
+      jiwa: null,
+      kk: null,
+      lakiLaki: null,
+      perempuan: null,
+    },
+    {
+      nama: "Kayee Unoe",
+      jiwa: null,
+      kk: null,
+      lakiLaki: null,
+      perempuan: null,
+    },
   ] as DusunStat[],
 };
 

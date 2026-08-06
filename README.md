@@ -82,7 +82,9 @@ Masih berupa contoh/placeholder — perlu dilengkapi sebelum rilis penuh: naskah
 
 ## Deployment
 
-Repositori ini di-deploy ke [Vercel](https://vercel.com) dengan root direktori `frontend/` (lihat `frontend/vercel.json`). Setelah domain asli (`gp-madat.web.id`) dibeli, perbarui nilai `site` di `frontend/astro.config.mjs` dan `domain` di `frontend/src/data/site.ts`.
+Repositori ini di-deploy ke [Vercel](https://vercel.com) dengan root direktori `frontend/` (lihat `frontend/vercel.json`).
+
+URL kanonik situs (dipakai untuk `canonical`, Open Graph, dan sitemap) terdeteksi otomatis dari environment Vercel, jadi **tidak perlu mengubah kode saat ganti domain**. Setelah `gp-madat.web.id` dibeli, cukup pasang domain tersebut sebagai *production domain* di dashboard Vercel — nilai canonical akan ikut menyesuaikan. Untuk menimpanya secara manual, set environment variable `PUBLIC_SITE_URL` (mis. `https://gp-madat.web.id`).
 
 ## Kredit
 

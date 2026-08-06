@@ -20,7 +20,13 @@ const formatted = new Date(post.data.date).toLocaleDateString('id-ID', {
 });
 ---
 
-<Layout title={post.data.title} description={post.data.excerpt} image={post.data.cover}>
+<Layout
+  title={post.data.title}
+  description={post.data.excerpt}
+  image={post.data.cover}
+  type="article"
+  publishedTime={post.data.date}
+>
   <article class="mx-auto max-w-3xl px-5 py-14 sm:px-8">
     <a href="/kegiatan" class="inline-flex items-center gap-2 text-sm font-medium text-ink-3 transition-colors hover:text-clay-700">
       <Icon name="lucide:arrow-left" class="h-4 w-4" />
