@@ -23,7 +23,7 @@ export const kaurKasi: Perangkat[] = [
   { nama: 'Khaidir', jabatan: 'Kaur Umum & Perencanaan', kelompok: 'Urusan Umum & Perencanaan' },
   { nama: 'Suryadi', jabatan: 'Kaur Keuangan', kelompok: 'Urusan Keuangan' },
   { nama: 'Abdurrahman', jabatan: 'Kasi Pemerintahan', kelompok: 'Seksi Pemerintahan' },
-  { nama: 'Muksin', jabatan: 'Kasi Kesejahteraan & Pelayanan', kelompok: 'Seksi Kesejahteraan & Pelayanan' },
+  { nama: 'Muchsin', jabatan: 'Kasi Kesejahteraan & Pelayanan', kelompok: 'Seksi Kesejahteraan & Pelayanan' },
 ];
 
 /** Kepala dusun — satu per wilayah dusun di penduduk.ts. */
@@ -43,7 +43,7 @@ export const kepalaDusun: Perangkat[] = [{
   kelompok: `Dusun Cot Madat`,
 },
 {
-  nama: ``,
+  nama: `Muhammad Rizal`,
   jabatan: 'Kepala Dusun Kayee Unoe',
   kelompok: `Dusun Kayee Unoe`,
 }];
