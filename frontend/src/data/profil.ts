@@ -23,10 +23,17 @@ export const profil = {
   ],
 
   /**
-   * Naskah asal-usul nama dan sejarah gampong. Isi dengan naskah resmi hasil
-   * wawancara tokoh masyarakat; biarkan null bila belum tersedia.
+   * Asal-usul nama gampong.
+   *
+   * Ditulis dengan atribusi ("menurut penuturan warga") dan bukan sebagai
+   * pernyataan sejarah yang sudah baku, karena naskah resmi hasil wawancara
+   * tokoh masyarakat belum tersedia. Ganti dengan naskah resmi begitu ada,
+   * dan hapus kalimat penutup soal penyusunan bila sudah tidak relevan.
    */
-  asalUsul: null as string[] | null,
+  asalUsul: [
+    "Dalam bahasa Indonesia, kata “madat” bermakna candu. Menurut penuturan warga setempat, makna itulah yang dikaitkan dengan asal penamaan Gampong Madat.",
+    "Penuturan tersebut belum dibakukan dalam naskah sejarah resmi. Catatan lengkap mengenai asal-usul nama sekaligus perkembangan gampong dari masa ke masa masih disusun bersama tokoh masyarakat.",
+  ] as string[] | null,
 
   // Draf rumusan — sesuaikan dengan dokumen RPJM Gampong bila sudah ada.
   visi: "Mewujudkan Gampong Madat yang religius, sejahtera, dan mandiri melalui pemerintahan yang bersih, pelayanan yang ramah, serta pemberdayaan potensi warga.",
