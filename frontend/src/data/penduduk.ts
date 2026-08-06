@@ -1,22 +1,33 @@
 export interface DusunStat {
   nama: string;
-  jiwa: number;
-  kk: number;
-  lakiLaki: number;
-  perempuan: number;
+  /** Biarkan null selama rincian per dusun belum tersedia. */
+  jiwa: number | null;
+  kk: number | null;
+  lakiLaki: number | null;
+  perempuan: number | null;
 }
 
+/**
+ * Angka total bersumber dari tabel "Data Statistik Gampong Madat" pada
+ * Peta Gampong Madat — KKN Kelompok 29 Universitas Samudra Langsa (2026).
+ */
 export const penduduk = {
   totalJiwa: 1579,
   totalKK: 515,
   lakiLaki: 808,
   perempuan: 771,
   sumber:
-    "Nama dusun mengikuti batas wilayah resmi (data GeoJSON hasil pemetaan QGIS). Total penduduk sudah memakai angka riil, tetapi sebaran per dusun di bawah ini masih estimasi proporsional (placeholder) — ganti dengan data riil per dusun bila sudah tersedia.",
+    'Sumber: Data Statistik Gampong Madat, Peta Gampong Madat — KKN Kelompok 29 Universitas Samudra Langsa (2026).',
+  // Nama dusun mengikuti batas wilayah pada data GeoJSON hasil pemetaan QGIS.
+  // Rincian jiwa/KK per dusun belum tersedia, sengaja dikosongkan agar tidak
+  // menampilkan angka karangan pada situs resmi gampong.
   dusun: [
-    { nama: "Ali Tawil", jiwa: 430, kk: 141, lakiLaki: 221, perempuan: 209 },
-    { nama: "Cot Madat", jiwa: 395, kk: 130, lakiLaki: 202, perempuan: 193 },
-    { nama: "Abeuk Gadeng", jiwa: 380, kk: 125, lakiLaki: 194, perempuan: 186 },
-    { nama: "Kayee Unoe", jiwa: 374, kk: 119, lakiLaki: 191, perempuan: 183 },
+    { nama: 'Cot Madat', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
+    { nama: 'Ali Tawil', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
+    { nama: 'Abeuk Gadeng', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
+    { nama: 'Kayee Unoe', jiwa: null, kk: null, lakiLaki: null, perempuan: null },
   ] as DusunStat[],
 };
+
+/** True bila rincian per dusun sudah diisi. */
+export const adaRincianDusun = penduduk.dusun.some((d) => d.jiwa !== null);

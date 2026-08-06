@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { site } from '../data/site';
+import { kontak } from '../data/kontak';
 
 const navItems = [
   { href: '/', label: 'Beranda' },
@@ -11,7 +12,6 @@ const navItems = [
   { href: '/kegiatan', label: 'Kegiatan' },
   { href: '/galeri', label: 'Galeri' },
   { href: '/peta', label: 'Peta' },
-  { href: '/kontak', label: 'Kontak' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -19,7 +19,23 @@ const isActive = (href: string) =>
   href === '/' ? currentPath === '/' : currentPath.startsWith(href);
 ---
 
-<header class="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur-md">
+<header id="site-header" class="site-header sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-md">
+  <!-- Pita informasi resmi; menyusut saat halaman digulir. -->
+  <div class="utility-strip bg-padi-950 text-paper-3">
+    <div
+      class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-2 text-[0.6875rem] tracking-[0.06em] sm:px-8"
+    >
+      <p class="flex items-center gap-2 truncate">
+        <Icon name="lucide:landmark" class="h-3.5 w-3.5 shrink-0 text-clay-400" />
+        <span class="truncate">Pemerintah {site.kabupaten} — Provinsi {site.provinsi}</span>
+      </p>
+      <p class="hidden items-center gap-2 whitespace-nowrap sm:flex">
+        <Icon name="lucide:clock" class="h-3.5 w-3.5 shrink-0 text-clay-400" />
+        {kontak.jamLayanan}
+      </p>
+    </div>
+  </div>
+
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5 sm:px-8">
     <a href="/" class="group flex items-center gap-3">
       {
@@ -29,7 +45,7 @@ const isActive = (href: string) =>
             alt={`Lambang ${site.name}`}
             width="44"
             height="44"
-            class="h-11 w-11 shrink-0 object-contain"
+            class="h-11 w-11 shrink-0 object-contain transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
           <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-[3px] bg-padi-800 font-display text-base font-semibold text-paper">
@@ -47,31 +63,49 @@ const isActive = (href: string) =>
       </span>
     </a>
 
-    <nav class="hidden items-center gap-0.5 xl:flex">
-      {
-        navItems.map((item) => (
-          <a
-            href={item.href}
-            class:list={[
-              'relative px-3 py-2 text-[0.8125rem] font-medium transition-colors',
-              isActive(item.href)
-                ? 'text-padi-800'
-                : 'text-ink-2 hover:text-padi-700',
-            ]}
-          >
-            {item.label}
-            {isActive(item.href) && (
-              <span class="absolute inset-x-3 -bottom-0.5 h-[2px] bg-clay-500" />
-            )}
-          </a>
-        ))
-      }
-    </nav>
+    <div class="hidden items-center gap-1.5 xl:flex">
+      <nav class="flex items-center gap-0.5">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'group relative px-3 py-2 text-[0.8125rem] font-medium transition-colors',
+                isActive(item.href) ? 'text-padi-800' : 'text-ink-2 hover:text-padi-800',
+              ]}
+            >
+              {item.label}
+              <span
+                class:list={[
+                  'pointer-events-none absolute inset-x-2.5 bottom-0.5 h-[2px] origin-left bg-clay-500 transition-transform duration-300 ease-out',
+                  isActive(item.href) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
+                ]}
+              />
+            </a>
+          ))
+        }
+      </nav>
+
+      <a
+        href="/kontak"
+        aria-current={isActive('/kontak') ? 'page' : undefined}
+        class:list={[
+          'ml-2 inline-flex items-center gap-1.5 rounded-[3px] border px-3.5 py-2 text-[0.8125rem] font-semibold transition-colors',
+          isActive('/kontak')
+            ? 'border-padi-800 bg-padi-800 text-paper'
+            : 'border-padi-800/35 text-padi-800 hover:border-padi-800 hover:bg-padi-800 hover:text-paper',
+        ]}
+      >
+        <Icon name="lucide:mail" class="h-3.5 w-3.5" />
+        Kontak
+      </a>
+    </div>
 
     <button
       id="nav-toggle"
       type="button"
-      class="inline-flex items-center justify-center rounded-[3px] border border-line p-2 text-padi-800 transition-colors hover:bg-paper-2 xl:hidden"
+      class="inline-flex items-center justify-center rounded-[3px] border border-line p-2 text-padi-800 transition-colors hover:border-padi-400 hover:bg-paper-2 xl:hidden"
       aria-label="Buka menu navigasi"
       aria-expanded="false"
       aria-controls="mobile-menu"
@@ -81,40 +115,58 @@ const isActive = (href: string) =>
     </button>
   </div>
 
-  <nav
-    id="mobile-menu"
-    class="hidden border-t border-line bg-paper px-5 pb-5 pt-2 sm:px-8 xl:hidden"
-  >
-    {
-      navItems.map((item) => (
-        <a
-          href={item.href}
-          class:list={[
-            'flex items-center justify-between border-b border-line/60 py-3 text-sm font-medium transition-colors last:border-0',
-            isActive(item.href) ? 'text-padi-800' : 'text-ink-2 hover:text-padi-700',
-          ]}
-        >
-          {item.label}
-          {isActive(item.href) && <span class="h-1.5 w-1.5 rounded-full bg-clay-500" />}
-        </a>
-      ))
-    }
-  </nav>
+  <!-- Menu seluler: animasi buka-tutup memakai grid-template-rows. -->
+  <div id="mobile-menu" class="mobile-menu grid xl:hidden" data-open="false">
+    <div class="overflow-hidden">
+      <nav class="border-t border-line bg-paper px-5 pb-5 pt-1 sm:px-8">
+        {
+          [...navItems, { href: '/kontak', label: 'Kontak' }].map((item) => (
+            <a
+              href={item.href}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+              class:list={[
+                'flex items-center justify-between border-b border-line/60 py-3 text-sm font-medium transition-colors last:border-0',
+                isActive(item.href) ? 'text-padi-800' : 'text-ink-2 hover:text-padi-800',
+              ]}
+            >
+              <span class="flex items-center gap-2.5">
+                <span
+                  class:list={[
+                    'h-1.5 w-1.5 rounded-full transition-colors',
+                    isActive(item.href) ? 'bg-clay-500' : 'bg-line',
+                  ]}
+                />
+                {item.label}
+              </span>
+              <Icon name="lucide:chevron-right" class="h-4 w-4 text-ink-3" />
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+  </div>
 
   <div class="motif-band opacity-70"></div>
 </header>
 
 <script>
+  const header = document.getElementById('site-header');
   const toggle = document.getElementById('nav-toggle');
   const menu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('icon-open');
   const iconClose = document.getElementById('icon-close');
 
   toggle?.addEventListener('click', () => {
-    const willOpen = menu?.classList.contains('hidden') ?? false;
-    menu?.classList.toggle('hidden');
-    iconOpen?.classList.toggle('hidden');
-    iconClose?.classList.toggle('hidden');
+    const willOpen = menu?.dataset.open !== 'true';
+    if (menu) menu.dataset.open = String(willOpen);
+    iconOpen?.classList.toggle('hidden', willOpen);
+    iconClose?.classList.toggle('hidden', !willOpen);
     toggle.setAttribute('aria-expanded', String(willOpen));
+    toggle.setAttribute('aria-label', willOpen ? 'Tutup menu navigasi' : 'Buka menu navigasi');
   });
+
+  // Rapatkan header setelah digulir supaya isi halaman mendapat ruang lebih.
+  const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 </script>

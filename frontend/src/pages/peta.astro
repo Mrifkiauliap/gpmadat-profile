@@ -1,20 +1,58 @@
 ---
+import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { penduduk } from '../data/penduduk';
+import { wilayah } from '../data/profil';
 import 'leaflet/dist/leaflet.css';
+
+const ringkas = [
+  { icon: 'ruler', label: 'Luas Wilayah', value: `${wilayah.luasHektar.toLocaleString('id-ID')} Ha` },
+  { icon: 'compass', label: 'Jumlah Dusun', value: `${wilayah.jumlahDusun} Dusun` },
+  { icon: 'users', label: 'Penduduk', value: `${penduduk.totalJiwa.toLocaleString('id-ID')} Jiwa` },
+];
 ---
 
 <Layout title="Peta Wilayah" description="Peta batas dusun Gampong Madat.">
   <PageHeader
     eyebrow="Lokasi Geografis"
     title="Peta Wilayah Gampong"
-    description={`Batas ${penduduk.dusun.length} wilayah dusun di Gampong Madat, disusun dari data pemetaan QGIS.`}
+    description={`Batas ${wilayah.jumlahDusun} wilayah dusun di Gampong Madat, disusun dari data pemetaan QGIS.`}
   />
 
   <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <div class="mb-6 grid gap-4 sm:grid-cols-3">
+      {
+        ringkas.map((r) => (
+          <div class="card flex items-center gap-3.5 p-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-[3px] bg-padi-50 text-padi-700">
+              <Icon name={`lucide:${r.icon}`} class="h-5 w-5" />
+            </span>
+            <div>
+              <p class="stat-figure text-xl text-padi-800">{r.value}</p>
+              <p class="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-ink-3">
+                {r.label}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
     <div class="card overflow-hidden">
-      <div id="map" class="h-[520px] w-full"></div>
+      <div class="relative">
+        <div id="map" class="h-[520px] w-full"></div>
+
+        <button
+          id="map-reset"
+          type="button"
+          class="absolute right-3 top-3 z-[400] inline-flex items-center gap-1.5 rounded-[3px] border border-line bg-paper/95 px-3 py-2 text-xs font-semibold text-padi-800 shadow-sm backdrop-blur transition-colors hover:bg-paper-2"
+        >
+          <Icon name="lucide:maximize" class="h-3.5 w-3.5" />
+          Tampilkan seluruh wilayah
+        </button>
+      </div>
+
       <div
         id="map-legend"
         class="flex flex-wrap items-center gap-x-6 gap-y-2.5 border-t border-line bg-paper-2/70 px-5 py-4 text-sm"
@@ -22,9 +60,14 @@ import 'leaflet/dist/leaflet.css';
       </div>
     </div>
 
-    <p class="mt-4 text-xs leading-relaxed text-ink-3">
-      Klik salah satu wilayah pada peta untuk melihat nama dusun. Sumber data batas wilayah: hasil
-      pemetaan QGIS Gampong Madat (proyeksi WGS84 / EPSG:4326).
+    <p class="mt-4 flex items-start gap-2 text-xs leading-relaxed text-ink-3">
+      <Icon name="lucide:info" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-clay-500" />
+      <span>
+        Klik salah satu wilayah untuk melihat nama dusun. Perbesar peta memakai tombol
+        <b class="font-semibold">+</b> / <b class="font-semibold">−</b>, atau tahan
+        <kbd class="rounded-[2px] border border-line bg-paper px-1 py-0.5 font-sans">Ctrl</kbd>
+        sambil menggulir. Sumber batas wilayah: pemetaan QGIS Gampong Madat (WGS 1984 / EPSG:4326).
+      </span>
     </p>
   </section>
 </Layout>
@@ -45,11 +88,32 @@ import 'leaflet/dist/leaflet.css';
   // Selaras dengan token warna di global.css (hijau padi + tanah liat).
   const PALETTE = ['#1f523a', '#c96f35', '#38805e', '#944225', '#5b9e7c', '#e5a97e'];
 
-  const map = L.map('map', { scrollWheelZoom: false }).setView([5.1086, 97.5114], 14);
+  const map = L.map('map', {
+    // Gulir biasa tetap menggerakkan halaman; zoom perlu Ctrl + gulir.
+    scrollWheelZoom: false,
+    zoomControl: false,
+    maxZoom: 18,
+  }).setView([5.1086, 97.5114], 14);
+
+  map.addControl(L.control.zoom({ position: 'topleft' }));
+  map.addControl(L.control.scale({ imperial: false, position: 'bottomleft' }));
+
+  // Ctrl + gulir memperbesar peta pada titik kursor; gulir biasa dibiarkan
+  // menggerakkan halaman agar peta tidak "menjebak" scroll pengguna.
+  map.getContainer().addEventListener(
+    'wheel',
+    (e) => {
+      if (!e.ctrlKey) return;
+      e.preventDefault();
+      const target = map.getZoom() + (e.deltaY < 0 ? 1 : -1);
+      map.setZoomAround(map.mouseEventToContainerPoint(e), target);
+    },
+    { passive: false },
+  );
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 19,
+    maxZoom: 18,
   }).addTo(map);
 
   // Nama dusun dibaca dari beberapa kemungkinan nama kolom, supaya file GeoJSON
@@ -64,8 +128,7 @@ import 'leaflet/dist/leaflet.css';
   // Warna ditentukan dari urutan feature, bukan dari atribut `id`, agar setiap
   // wilayah tetap berbeda warna meski export baru tidak punya kolom id.
   const colorIndex = new Map();
-  const colorFor = (feature) =>
-    PALETTE[(colorIndex.get(feature) ?? 0) % PALETTE.length];
+  const colorFor = (feature) => PALETTE[(colorIndex.get(feature) ?? 0) % PALETTE.length];
 
   fetch('/geojson/madat.geojson')
     .then((res) => res.json())
@@ -107,7 +170,17 @@ import 'leaflet/dist/leaflet.css';
       }).addTo(map);
 
       const bounds = layer.getBounds();
-      if (bounds.isValid()) map.fitBounds(bounds, { padding: [28, 28] });
+      if (!bounds.isValid()) return;
+
+      const resetView = () => map.fitBounds(bounds, { padding: [28, 28] });
+      resetView();
+
+      // Kunci jangkauan peta: tidak bisa dizoom keluar melewati batas gampong,
+      // dan tidak bisa digeser jauh meninggalkan wilayah.
+      map.setMinZoom(map.getZoom() - 1);
+      map.setMaxBounds(bounds.pad(0.6));
+
+      document.getElementById('map-reset')?.addEventListener('click', resetView);
     })
     .catch((err) => console.error('Gagal memuat data GeoJSON:', err));
 </script>
@@ -122,5 +195,16 @@ import 'leaflet/dist/leaflet.css';
   }
   :global(.leaflet-popup-content) {
     font-size: 0.875rem;
+  }
+  /* Kontrol bawaan Leaflet disesuaikan dengan gaya kartu situs. */
+  :global(.leaflet-bar a),
+  :global(.leaflet-control-scale-line) {
+    border-radius: 2px;
+    color: var(--color-padi-800);
+    font-family: var(--font-sans);
+  }
+  :global(.leaflet-control-attribution) {
+    background: color-mix(in srgb, var(--color-paper) 88%, transparent);
+    font-size: 0.6875rem;
   }
 </style>

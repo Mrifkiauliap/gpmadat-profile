@@ -1,17 +1,43 @@
 import { site } from './site';
 
+/**
+ * Angka wilayah bersumber dari Peta Gampong Madat — KKN Kelompok 29
+ * Universitas Samudra Langsa (2026).
+ */
+export const wilayah = {
+  luasHektar: 231.24,
+  jumlahDusun: 4,
+  namaDusun: ['Cot Madat', 'Ali Tawil', 'Abeuk Gadeng', 'Kayee Unoe'],
+};
+
 export const profil = {
-  sejarah: [
-    `Gampong Madat merupakan salah satu gampong (desa) yang berada di wilayah ${site.kecamatan}, ${site.kabupaten}, Provinsi ${site.provinsi}. Catatan sejarah lengkap mengenai asal-usul dan perkembangan gampong ini masih dalam proses penyusunan bersama tokoh masyarakat setempat.`,
-    'Paragraf ini adalah teks placeholder — lengkapi dengan sejarah, cikal bakal nama gampong, dan tonggak penting perkembangan Gampong Madat dari waktu ke waktu.',
+  /**
+   * Gambaran umum — seluruh paragraf di bawah disusun dari data terverifikasi
+   * (peta gampong, data statistik gampong, dan letak kantor kecamatan).
+   */
+  gambaranUmum: [
+    `Gampong Madat adalah salah satu gampong di ${site.kecamatan}, ${site.kabupaten}, Provinsi ${site.provinsi}. Wilayahnya mencakup ${wilayah.luasHektar.toLocaleString('id-ID')} hektar yang terbagi ke dalam ${wilayah.jumlahDusun} dusun, yaitu Dusun ${wilayah.namaDusun.slice(0, -1).join(', Dusun ')}, dan Dusun ${wilayah.namaDusun.at(-1)}.`,
+    'Gampong Madat berkedudukan sebagai pusat pemerintahan Kecamatan Madat. Kantor Camat Madat berada di wilayah gampong ini, sehingga Gampong Madat menjadi simpul layanan publik bagi gampong-gampong di sekitarnya.',
+    'Kedudukan tersebut membuat sarana dan prasarana di Gampong Madat tergolong lengkap untuk ukuran sebuah gampong: mulai dari kantor pemerintahan, Kantor Urusan Agama, Puskesmas, Polsek, dan Koramil, hingga satuan pendidikan yang lengkap dari jenjang dasar sampai menengah atas.',
+    'Sebagian besar warga menggantungkan penghidupan pada sektor pertanian, khususnya persawahan padi, yang ditopang oleh usaha perdagangan, kuliner, peternakan, serta jasa yang tumbuh di sekitar pusat kecamatan.',
   ],
-  visi: 'Mewujudkan Gampong Madat yang adil, mandiri, sejahtera, dan agamais. (placeholder — sesuaikan dengan visi resmi gampong)',
+
+  /**
+   * Naskah asal-usul nama dan sejarah gampong. Isi dengan naskah resmi hasil
+   * wawancara tokoh masyarakat; biarkan null bila belum tersedia.
+   */
+  asalUsul: null as string[] | null,
+
+  // Draf rumusan — sesuaikan dengan dokumen RPJM Gampong bila sudah ada.
+  visi: 'Mewujudkan Gampong Madat yang religius, sejahtera, dan mandiri melalui pemerintahan yang bersih, pelayanan yang ramah, serta pemberdayaan potensi warga.',
   misi: [
-    'Meningkatkan tata kelola pemerintahan gampong yang transparan dan akuntabel.',
-    'Mendorong pertumbuhan ekonomi warga melalui pemberdayaan UMKM dan sektor pertanian.',
-    'Meningkatkan kualitas layanan kesehatan, pendidikan, dan infrastruktur dasar.',
-    'Melestarikan nilai-nilai keagamaan dan kearifan lokal masyarakat gampong.',
+    'Menyelenggarakan pemerintahan gampong yang transparan, akuntabel, dan melayani.',
+    'Meningkatkan kualitas pertanian sebagai penopang utama ekonomi warga.',
+    'Menumbuhkan usaha perdagangan, kuliner, peternakan, dan jasa masyarakat gampong.',
+    'Memelihara sarana pendidikan, kesehatan, dan peribadatan yang telah tersedia.',
+    'Menguatkan nilai keagamaan, adat, serta semangat gotong royong warga.',
   ],
+
   batasWilayah: [
     { arah: 'Utara', keterangan: 'Berbatasan dengan Gampong Keupala Sa dan Gampong Keupala Dua' },
     { arah: 'Selatan', keterangan: 'Berbatasan dengan Gampong Paya Demam Peut' },

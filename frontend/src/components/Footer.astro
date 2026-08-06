@@ -18,8 +18,8 @@ const tautan = [
 <footer class="mt-24 bg-padi-950 text-paper-3">
   <div class="motif-band"></div>
 
-  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
-    <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+  <div class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
+    <div class="grid gap-12 md:grid-cols-[1.4fr_1fr_1.1fr]">
       <div>
         <div class="flex items-center gap-3.5">
           {
@@ -41,25 +41,37 @@ const tautan = [
             </p>
           </div>
         </div>
-        <p class="mt-4 max-w-sm text-sm leading-relaxed text-paper-3/75">
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-paper-3/70">
           Portal resmi Gampong Madat sebagai sarana keterbukaan informasi publik mengenai profil
           desa, aparatur, data penduduk, dan potensi warga.
         </p>
+
+        <a
+          href="/kontak"
+          class="mt-6 inline-flex items-center gap-2 border-b border-clay-500/50 pb-1 text-sm font-semibold text-clay-300 transition-colors hover:border-clay-400 hover:text-clay-200"
+        >
+          Hubungi kantor gampong
+          <Icon name="lucide:arrow-right" class="h-3.5 w-3.5" />
+        </a>
       </div>
 
       <div>
-        <p class="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-clay-300">
+        <p class="flex items-center gap-2.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-clay-300">
+          <span class="h-px w-5 bg-clay-500"></span>
           Navigasi
         </p>
-        <ul class="mt-4 space-y-2.5 text-sm">
+        <ul class="mt-5 space-y-2.5 text-sm">
           {
             tautan.map((t) => (
               <li>
                 <a
                   href={t.href}
-                  class="inline-flex items-center gap-2 text-paper-3/80 transition-colors hover:text-paper"
+                  class="group inline-flex items-center gap-2 text-paper-3/75 transition-colors hover:text-paper"
                 >
-                  <Icon name="lucide:chevron-right" class="h-3.5 w-3.5 text-clay-400" />
+                  <Icon
+                    name="lucide:chevron-right"
+                    class="h-3.5 w-3.5 text-clay-400 transition-transform duration-200 group-hover:translate-x-0.5"
+                  />
                   {t.label}
                 </a>
               </li>
@@ -69,35 +81,59 @@ const tautan = [
       </div>
 
       <div>
-        <p class="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-clay-300">
+        <p class="flex items-center gap-2.5 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-clay-300">
+          <span class="h-px w-5 bg-clay-500"></span>
           Kantor Gampong
         </p>
-        <ul class="mt-4 space-y-3 text-sm text-paper-3/80">
-          <li class="flex gap-2.5">
+        <ul class="mt-5 space-y-4 text-sm text-paper-3/75">
+          <li class="flex gap-3">
             <Icon name="lucide:map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-clay-400" />
             <span class="leading-relaxed">{kontak.alamat}</span>
           </li>
-          <li class="flex gap-2.5">
+          <li class="flex gap-3">
             <Icon name="lucide:clock" class="mt-0.5 h-4 w-4 shrink-0 text-clay-400" />
             <span>{kontak.jamLayanan}</span>
           </li>
-          <li class="flex gap-2.5">
+          <li class="flex gap-3">
             <Icon name="lucide:mail" class="mt-0.5 h-4 w-4 shrink-0 text-clay-400" />
-            <span>{kontak.email}</span>
+            <a href={`mailto:${kontak.email}`} class="transition-colors hover:text-paper">
+              {kontak.email}
+            </a>
           </li>
         </ul>
       </div>
     </div>
 
     <div
-      class="mt-12 flex flex-col gap-3 border-t border-padi-800 pt-6 text-xs text-paper-3/55 sm:flex-row sm:items-center sm:justify-between"
+      class="mt-14 flex flex-col gap-4 border-t border-padi-800 pt-6 text-xs text-paper-3/55 sm:flex-row sm:items-center sm:justify-between"
     >
       <p>&copy; {year} Pemerintah {site.name}. Hak cipta dilindungi undang-undang.</p>
+
       <p class="flex items-center gap-1.5">
         <Icon name="lucide:heart" class="h-3.5 w-3.5 fill-clay-500 text-clay-500" />
         <span class="font-semibold text-clay-300">KKN Kelompok 29 Unsam Tercinta</span>
       </p>
-      <p>{site.kabupaten} • Provinsi {site.provinsi}</p>
+
+      <button
+        type="button"
+        id="back-to-top"
+        class="to-top group inline-flex items-center gap-2 self-start transition-colors hover:text-paper sm:self-auto"
+      >
+        Kembali ke atas
+        <span
+          class="to-top-icon inline-flex h-6 w-6 items-center justify-center border border-padi-800 transition-all duration-200 group-hover:border-clay-500 group-hover:text-clay-300"
+        >
+          <Icon name="lucide:arrow-up" class="h-3 w-3" />
+        </span>
+      </button>
     </div>
   </div>
 </footer>
+
+<script>
+  // Anchor ke elemen sticky (header) tidak selalu men-scroll, karena posisi
+  // rect-nya sudah top:0 saat terpaku. Pakai scrollTo langsung agar konsisten.
+  document.getElementById('back-to-top')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

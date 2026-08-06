@@ -7,9 +7,10 @@ import StatCard from '../components/StatCard.astro';
 import ActivityCard from '../components/ActivityCard.astro';
 import PotensiCard from '../components/PotensiCard.astro';
 import { site } from '../data/site';
-import { profil } from '../data/profil';
+import { profil, wilayah } from '../data/profil';
 import { penduduk } from '../data/penduduk';
 import { potensi } from '../data/potensi';
+import { fasilitas, totalFasilitas } from '../data/fasilitas';
 
 const kegiatanTerbaru = (await getCollection('kegiatan'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -116,18 +117,21 @@ const hasHeroImage = Boolean(site.heroImage);
     <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
       <SectionHeading
         eyebrow="Sekilas Gampong"
-        title="Desa yang tumbuh dari sawah, sungai, dan gotong royong."
+        title="Pusat pemerintahan kecamatan yang tumbuh dari sawah dan gotong royong."
       />
       <div class="space-y-6">
         <p class="text-[1.0625rem] leading-[1.75] text-ink-2">
-          {profil.sejarah[0]}
+          {profil.gambaranUmum[0]}
+        </p>
+        <p class="leading-[1.75] text-ink-2">
+          {profil.gambaranUmum[1]}
         </p>
         <div class="grid gap-4 sm:grid-cols-3">
           {
             [
-              { icon: 'compass', label: 'Wilayah', value: `${penduduk.dusun.length} Dusun` },
+              { icon: 'ruler', label: 'Luas Wilayah', value: `${wilayah.luasHektar.toLocaleString('id-ID')} Ha` },
               { icon: 'users', label: 'Penduduk', value: `${penduduk.totalJiwa.toLocaleString('id-ID')} Jiwa` },
-              { icon: 'sprout', label: 'Potensi', value: `${potensi.length} Sektor` },
+              { icon: 'building-2', label: 'Sarana Umum', value: `${totalFasilitas} Unit` },
             ].map((item) => (
               <div class="border-l-2 border-clay-400 pl-4">
                 <Icon name={`lucide:${item.icon}`} class="h-5 w-5 text-padi-500" />
@@ -140,6 +144,49 @@ const hasHeroImage = Boolean(site.heroImage);
           }
         </div>
         <a href="/profil" class="link-underline inline-block text-sm">Baca profil lengkap</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SARANA ================= -->
+  <section class="border-t border-line bg-padi-950 py-20 text-paper-3">
+    <div class="mx-auto max-w-6xl px-5 sm:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-5">
+        <div class="max-w-2xl">
+          <p class="eyebrow text-clay-300!">Sarana & Prasarana</p>
+          <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
+            {totalFasilitas} sarana layanan publik
+          </h2>
+          <p class="mt-3 leading-relaxed text-paper-3/70">
+            Sebagai pusat pemerintahan Kecamatan Madat, gampong ini memiliki sarana pemerintahan,
+            pendidikan, kesehatan, peribadatan, hingga keamanan.
+          </p>
+        </div>
+        <a
+          href="/profil"
+          class="inline-flex items-center gap-2 border-b border-clay-500/50 pb-1 text-sm font-semibold text-clay-300 transition-colors hover:border-clay-400 hover:text-clay-200"
+        >
+          Lihat rincian sarana
+          <Icon name="lucide:arrow-right" class="h-3.5 w-3.5" />
+        </a>
+      </div>
+
+      <div class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          fasilitas.map((k) => (
+            <div class="border-t-2 border-clay-500/70 pt-5">
+              <div class="flex items-center gap-2.5">
+                <Icon name={`lucide:${k.icon}`} class="h-5 w-5 text-clay-400" />
+                <h3 class="font-display text-lg font-semibold text-paper">{k.kategori}</h3>
+              </div>
+              <ul class="mt-4 space-y-1.5">
+                {k.items.map((f) => (
+                  <li class="text-sm text-paper-3/75">{f.nama}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
