@@ -8,7 +8,7 @@ export const site = {
   description:
     "Website profil resmi Gampong Madat: profil desa, pemerintahan, data penduduk, potensi, kegiatan, galeri, dan peta wilayah.",
   // Domain dummy sementara (lihat astro.config.mjs `site`). Ganti keduanya bersamaan setelah domain asli dibeli.
-  domain: "gp-madat.local",
+  domain: "gampongmadat.web.id",
   // Foto latar hero di Beranda (mis. kantor Keuchik / suasana desa). Taruh file di public/images/hero-desa.jpg
   // lalu isi path di sini, contoh: '/images/hero-desa.jpg'. Biarkan null untuk memakai latar gradien default.
   heroImage: null,
@@ -17,5 +17,5 @@ export const site = {
   ogImage: "/images/og-default.png",
   logo: "/images/logo-desa.webp",
   alamatKantor:
-    "Jln Paya Deman, Kantor Gampong Madat, Kecamatan Madat, Kabupaten Aceh Timur, Aceh",
+    "Jln Simpang Ulim - Paya Naden, Kantor Keuchik Gampong Madat, Kecamatan Madat, Kabupaten Aceh Timur, Aceh",
 };
