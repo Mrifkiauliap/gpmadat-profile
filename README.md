@@ -80,7 +80,9 @@ Batas 4 dusun (Ali Tawil, Cot Madat, Abeuk Gadeng, Kayee Unoe) disimpan di `fron
 
 Sudah memakai data resmi (sumber: Peta Gampong Madat, KKN Kelompok 29 Unsam 2026): identitas gampong, alamat kantor, kontak, luas wilayah 231,24 Ha, 4 dusun, batas wilayah, batas dusun GeoJSON, total penduduk 1.579 jiwa / 515 KK, susunan 9 perangkat gampong, 13 sarana-prasarana, dan lambang gampong.
 
-Masih perlu dilengkapi sebelum rilis penuh: naskah sejarah gampong, visi-misi resmi (yang tertulis sekarang masih draf tim KKN), rincian penduduk per dusun, angka potensi/UMKM riil, foto asli (galeri, kegiatan, dan latar halaman depan), dokumentasi kegiatan, serta domain. Rinciannya di [`DATA-DIBUTUHKAN.md`](DATA-DIBUTUHKAN.md).
+Masih perlu dilengkapi sebelum rilis penuh: naskah sejarah gampong, visi-misi resmi (yang tertulis sekarang masih draf tim KKN), rincian penduduk per dusun, angka potensi/UMKM riil, foto latar halaman depan, serta domain. Rinciannya di [`DATA-DIBUTUHKAN.md`](DATA-DIBUTUHKAN.md).
+
+Galeri dan dokumentasi kegiatan sudah memakai foto asli KKN (dikonversi ke WebP untuk performa; berkas resolusi penuh diarsipkan di `frontend/foto-asli/`).
 
 ## Deployment
 

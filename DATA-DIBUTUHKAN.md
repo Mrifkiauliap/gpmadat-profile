@@ -19,6 +19,7 @@ Dokumen ini merangkum data yang masih dibutuhkan untuk melengkapi website profil
 | Perangkat gampong | 9 orang (Keuchik, Sekdes, 4 Kaur/Kasi, 4 Kadus) |
 | Sarana & prasarana | 13 unit (pemerintahan, pendidikan, ibadah, kesehatan, keamanan) |
 | Lambang gampong | Sudah dipakai sebagai logo & favicon situs |
+| Dokumentasi kegiatan | 5 kegiatan dengan foto asli: posyandu, pemasangan peta, pemasangan plang dusun, survei batas dusun, kunjungan DPL |
 
 ---
 

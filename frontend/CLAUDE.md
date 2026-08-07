@@ -113,8 +113,15 @@ Daftar rinci untuk diminta ke operator desa ada di `../DATA-DIBUTUHKAN.md` (root
 | Visi & misi | Masih **draf tim KKN**, bukan dokumen resmi. Ganti dengan rumusan dari RPJM/RKP Gampong. |
 | Rincian penduduk per dusun | `null` — tabel per dusun tersembunyi otomatis. |
 | Angka potensi/UMKM | Masih taksiran (`± 25 usaha` dsb.). Hanya luas sawah yang mendekati riil. |
-| Foto | Seluruhnya masih placeholder SVG (galeri, cover kegiatan). `site.heroImage` `null`. |
-| Entri kegiatan | 4 entri di `src/content/kegiatan/` masih teks contoh. |
+| Foto latar Beranda | `site.heroImage` masih `null`. Foto KKN yang ada bersifat dokumentasi kegiatan, bukan foto kantor/suasana gampong yang cocok untuk hero. |
 | Domain | Masih memakai alamat bawaan Vercel; `gp-madat.web.id` belum dibeli. |
 
 Saat menambah data asli, hapus juga `<PlaceholderNotice>` di halaman terkait. Saat ini masih dipakai di `pemerintahan.astro` dan `penduduk.astro`.
+
+## Foto & Optimasi Gambar
+
+Galeri dan cover kegiatan sudah memakai foto asli dokumentasi KKN, disimpan sebagai **WebP** di `public/images/` (sisi terpanjang dibatasi 1600px, kualitas 82) — jauh lebih ringan dari JPEG kamera HP (mis. `survei-pengukuran-batas-dusun` turun dari 1054KB ke 209KB). Berkas JPEG/PNG resolusi penuh disimpan di `frontend/foto-asli/` (tetap di-commit, sebagai arsip), lengkap dengan cuplikan perintah `sharp` untuk mengonversi foto baru — lihat `foto-asli/README.md`.
+
+`logo-desa.webp` sengaja diperkecil ke 256px meski tampil maksimal 52px di Navbar/Footer, karena masih perlu ruang untuk layar retina (2–3x). Jangan naikkan lagi ke resolusi penuh (2000px) — itu yang membuat Vercel memperingatkan ukuran logo sebelumnya.
+
+**Gambar OG (`og:image`) harus tetap PNG/JPEG.** WhatsApp, Facebook, dan X tidak merender SVG maupun WebP pada kartu pratinjau. `Layout.astro` sudah menjaga ini otomatis (lihat `ogSafe` di bagian frontmatter) — bila `image` yang diteruskan bukan `.png`/`.jpg`, ia jatuh ke `site.ogImage`. Jangan mengubah cover kegiatan (WebP) menjadi `image` default tanpa fallback ini.

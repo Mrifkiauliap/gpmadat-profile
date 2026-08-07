@@ -58,7 +58,7 @@ const formatted = new Date(post.data.date).toLocaleDateString('id-ID', {
         <img
           src={post.data.cover}
           alt=""
-          class="mt-9 w-full border border-line object-cover"
+          class="mt-9 aspect-[4/3] w-full border border-line object-cover sm:aspect-[16/9]"
         />
       )
     }

@@ -33,10 +33,12 @@ const cleanPath =
     .replace(/(.+)\/$/, '$1') || '/';
 const canonicalURL = new URL(cleanPath, Astro.site);
 
-// WhatsApp, Facebook, dan X tidak merender SVG pada kartu Open Graph, jadi
-// gambar SVG (mis. cover placeholder kegiatan) diganti gambar bawaan PNG.
+// Kartu Open Graph di WhatsApp, Facebook, dan X hanya bisa diandalkan untuk
+// JPEG/PNG — SVG dan WebP tidak dirender. Cover kegiatan disimpan sebagai WebP
+// demi bobot halaman, jadi untuk og:image dipakai gambar bawaan PNG.
 const requested = image ?? site.ogImage;
-const resolvedImage = requested.toLowerCase().endsWith('.svg') ? site.ogImage : requested;
+const ogSafe = /\.(png|jpe?g)$/i.test(requested);
+const resolvedImage = ogSafe ? requested : site.ogImage;
 const ogImageURL = new URL(resolvedImage, Astro.site);
 
 // Dimensi hanya diklaim untuk gambar bawaan yang ukurannya memang diketahui.
