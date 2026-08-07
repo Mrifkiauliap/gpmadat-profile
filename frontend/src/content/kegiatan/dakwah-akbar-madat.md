@@ -24,4 +24,4 @@ Kegiatan ini diharapkan dapat menjadi agenda rutin yang terus mempererat hubunga
 
 ---
 
-_Dokumentasi kegiatan dapat dilihat pada galeri foto di bawah ini._
+_Foto dokumentasi kegiatan ini masih dalam proses pengumpulan dan akan ditambahkan menyusul._

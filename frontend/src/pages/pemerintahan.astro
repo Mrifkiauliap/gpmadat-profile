@@ -4,7 +4,7 @@ import PageHeader from '../components/PageHeader.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import PlaceholderNotice from '../components/PlaceholderNotice.astro';
 import OfficialCard from '../components/OfficialCard.astro';
-import { keuchik, sekretariat, kaurKasi, kepalaDusun } from '../data/perangkat';
+import { keuchik, sekretariat, kaurKasi, kepalaDusun, tuhaPeut } from '../data/perangkat';
 import { site } from '../data/site';
 ---
 
@@ -76,6 +76,18 @@ import { site } from '../data/site';
       <a href="/peta" class="link-underline mt-8 inline-block text-sm">
         Lihat batas wilayah tiap dusun pada peta
       </a>
+    </div>
+
+    <!-- Tuha Peut Gampong -->
+    <div class="mt-16 border-t border-line pt-12">
+      <SectionHeading
+        eyebrow="Lembaga Permusyawaratan"
+        title="Tuha Peut Gampong (TPG)"
+        description="Lembaga permusyawaratan gampong yang berdiri sendiri di luar aparatur pemerintahan, berperan menampung aspirasi warga serta membahas dan menyepakati kebijakan bersama Keuchik."
+      />
+      <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {tuhaPeut.map((p) => <OfficialCard {...p} />)}
+      </div>
     </div>
   </section>
 </Layout>

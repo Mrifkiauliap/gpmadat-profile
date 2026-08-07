@@ -1,23 +1,29 @@
 ---
 title: "Survei Batas Dusun Kayee Unoe"
 date: 2026-07-30
-excerpt: "Survei dan pengukuran batas Dusun Kayee Unoe, diikuti rapat evaluasi kegiatan mahasiswa KKN di Gampong Madat."
+excerpt: "Survei dan pengukuran batas Dusun Kayee Unoe menyusuri persawahan dan saluran irigasi, dilanjutkan rapat evaluasi kegiatan kelompok KKN."
 cover: "/images/survei-pengukuran-batas-dusun.webp"
 tags: ["Pemetaan", "Survei", "KKN"]
 ---
 
-Mahasiswa KKN Kelompok 29 Universitas Samudra bersama warga melakukan **survei dan pengukuran batas Dusun Kayee Unoe**, salah satu dari empat dusun di Gampong Madat, dilanjutkan dengan rapat evaluasi kegiatan.
+Pada hari kedelapan belas pelaksanaan program, mahasiswa KKN Kelompok 29 Universitas Samudra bersama warga melakukan **survei dan pengukuran batas Dusun Kayee Unoe** — salah satu dari empat dusun di Gampong Madat — yang kemudian dilanjutkan dengan rapat evaluasi kegiatan.
 
-### Jalannya Survei
+## Jalannya Survei
 
-Tim menyusuri titik-titik batas di area persawahan dan saluran irigasi Dusun Kayee Unoe, didampingi warga yang memahami tapal batas wilayah setempat. Titik koordinat dicatat langsung di lapangan sebagai bahan penyusunan peta.
+Tim menyusuri titik-titik batas di area persawahan dan saluran irigasi Dusun Kayee Unoe. Titik koordinat dicatat langsung di lapangan untuk kemudian diolah menjadi data peta.
 
-### Rapat Evaluasi
+Pendampingan warga menjadi bagian yang paling menentukan. Batas dusun di wilayah ini banyak yang mengikuti **tanda alam** — saluran air, pintu air, dan pematang sawah — sehingga tanpa penunjuk yang memahami kesepakatan setempat, garis batas mudah keliru ditarik.
 
-Setelah survei, kelompok KKN menggelar rapat evaluasi untuk meninjau capaian program pemetaan wilayah yang telah dikerjakan di keempat dusun.
+## Rapat Evaluasi
 
-### Hasil
+Selesai survei, kelompok KKN menggelar rapat evaluasi untuk meninjau capaian program pemetaan yang telah dikerjakan di keempat dusun. Beberapa hal yang dibahas:
 
-Data hasil survei diolah menggunakan **QGIS** menjadi peta batas wilayah keempat dusun, dengan luas total tercatat 231,24 hektar. Hasil olahan inilah yang kemudian dicetak menjadi papan Peta Gampong Madat sekaligus menjadi sumber data peta interaktif pada situs ini.
+- Kelengkapan titik koordinat yang sudah terkumpul
+- Bagian batas yang masih perlu dikonfirmasi ulang ke warga
+- Persiapan pengolahan data ke tahap berikutnya
 
-Pendampingan warga selama survei sangat menentukan, karena batas dusun banyak yang mengikuti tanda alam seperti saluran air dan pematang sawah.
+## Hasil Akhir
+
+Data dari survei ini digabungkan dengan hasil pengukuran dusun lain, lalu diolah menggunakan **QGIS** pada proyeksi WGS 1984. Hasilnya berupa peta batas keempat dusun Gampong Madat dengan luas total tercatat **231,24 hektar**.
+
+Olahan inilah yang kemudian dicetak menjadi papan **Peta Gampong Madat** sekaligus menjadi sumber data peta interaktif pada situs ini.

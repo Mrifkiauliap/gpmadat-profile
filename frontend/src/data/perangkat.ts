@@ -64,6 +64,20 @@ export const kepalaDusun: Perangkat[] = [
   },
 ];
 
+/**
+ * Tuha Peut Gampong (TPG) — lembaga permusyawaratan gampong. Berdiri sendiri
+ * di luar aparatur eksekutif di atas, jadi sengaja TIDAK dimasukkan ke array
+ * `perangkat`. Sumber: papan struktur organisasi TPG di kantor gampong.
+ */
+export const tuhaPeut: Perangkat[] = [
+  { nama: "Zainon", jabatan: "Ketua TPG", kelompok: "Pimpinan TPG" },
+  { nama: "Usman Raden", jabatan: "Wakil Ketua", kelompok: "Pimpinan TPG" },
+  { nama: "Syarwannuddin", jabatan: "Sekretaris", kelompok: "Sekretariat TPG" },
+  { nama: "Hamdani", jabatan: "Anggota", kelompok: "Keanggotaan TPG" },
+  { nama: "Agustini", jabatan: "Anggota", kelompok: "Keanggotaan TPG" },
+];
+
+/** Aparatur eksekutif gampong (tanpa TPG). */
 export const perangkat: Perangkat[] = [
   keuchik,
   ...sekretariat,
