@@ -1,0 +1,3 @@
+# Knowledge graph hasil /graphify — berisi cache dan path absolut mesin lokal,
+# jadi tidak dibagikan lewat git. Bangun ulang dengan `/graphify` bila perlu.
+graphify-out/
