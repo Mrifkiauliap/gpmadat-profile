@@ -15,7 +15,7 @@ export const penduduk = {
   totalJiwa: 1598,
   totalKK: 498,
   lakiLaki: 787,
-  perempuan: 811,,
+  perempuan: 811,
   sumber:
     "Sumber: Data Statistik Gampong Madat, Peta Gampong Madat — KKN Kelompok 29 Universitas Samudra Langsa (2026).",
   // Nama dusun mengikuti batas wilayah pada data GeoJSON hasil pemetaan QGIS.
