@@ -68,7 +68,9 @@ Konten dipisah menjadi dua bentuk, tergantung strukturnya:
 - **`frontend/src/data/*.ts`** — data terstruktur tanpa badan tulisan panjang: identitas situs (`site.ts`), profil & visi-misi (`profil.ts`), perangkat gampong (`perangkat.ts`), statistik penduduk (`penduduk.ts`), potensi/UMKM (`potensi.ts`), sarana-prasarana (`fasilitas.ts`), galeri (`galeri.ts`), dan kontak (`kontak.ts`). Edit langsung nilainya, lalu jalankan ulang `pnpm dev`/`pnpm build`.
 - **`frontend/src/content/kegiatan/*.md`** — satu file Markdown per kegiatan (punya badan tulisan), dibaca lewat Astro Content Collection.
 
-Panduan lebih detail untuk pengembangan (arsitektur, konvensi ikon, cara mengganti GeoJSON, status data asli vs. placeholder) ada di [`frontend/CLAUDE.md`](frontend/CLAUDE.md).
+Beberapa data sengaja bernilai `null` sebagai penanda "belum tersedia" — misalnya rincian penduduk per dusun dan naskah asal-usul. Bagian yang bersangkutan otomatis disembunyikan atau diganti catatan, jadi **jangan diisi angka/teks perkiraan** demi menutup tampilan yang kosong.
+
+Panduan lebih detail untuk pengembangan (arsitektur, konvensi ikon, cara mengganti GeoJSON, status data asli vs. placeholder) ada di [`frontend/CLAUDE.md`](frontend/CLAUDE.md). Daftar data yang masih perlu diminta ke operator desa ada di [`DATA-DIBUTUHKAN.md`](DATA-DIBUTUHKAN.md).
 
 ## Peta & Data GeoJSON
 
@@ -76,9 +78,9 @@ Batas 4 dusun (Ali Tawil, Cot Madat, Abeuk Gadeng, Kayee Unoe) disimpan di `fron
 
 ## Status Data
 
-Sudah memakai data resmi (sumber: Peta Gampong Madat, KKN Kelompok 29 Unsam 2026): nama kecamatan/kabupaten, alamat kantor, batas wilayah, nama dusun, luas wilayah, total penduduk/KK/rasio gender, dan daftar sarana-prasarana.
+Sudah memakai data resmi (sumber: Peta Gampong Madat, KKN Kelompok 29 Unsam 2026): identitas gampong, alamat kantor, kontak, luas wilayah 231,24 Ha, 4 dusun, batas wilayah, batas dusun GeoJSON, total penduduk 1.579 jiwa / 515 KK, susunan 9 perangkat gampong, 13 sarana-prasarana, dan lambang gampong.
 
-Masih berupa contoh/placeholder — perlu dilengkapi sebelum rilis penuh: naskah sejarah & asal-usul nama gampong, sebagian nama perangkat gampong, rincian penduduk per dusun, angka potensi/UMKM, entri galeri & kegiatan, nomor telepon/email resmi, serta domain (saat ini memakai dummy `gp-madat.local`).
+Masih perlu dilengkapi sebelum rilis penuh: naskah sejarah gampong, visi-misi resmi (yang tertulis sekarang masih draf tim KKN), rincian penduduk per dusun, angka potensi/UMKM riil, foto asli (galeri, kegiatan, dan latar halaman depan), dokumentasi kegiatan, serta domain. Rinciannya di [`DATA-DIBUTUHKAN.md`](DATA-DIBUTUHKAN.md).
 
 ## Deployment
 

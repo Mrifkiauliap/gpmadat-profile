@@ -29,7 +29,7 @@ Dokumen ini merangkum data yang masih dibutuhkan untuk melengkapi website profil
 Bagian ini paling terasa kosong di halaman Profil karena belum ada naskah sama sekali.
 
 - Naskah sejarah singkat Gampong Madat (2–4 paragraf sudah cukup)
-- **Asal-usul nama "Madat"** — mohon konfirmasi resmi dari tokoh masyarakat / Keuchik. Perlu dipastikan versi yang benar dan pantas ditulis di situs resmi.
+- **Asal-usul nama "Madat"** — situs saat ini baru menuliskan bahwa *menurut penuturan warga*, nama gampong dikaitkan dengan makna kata "madat" (candu). Kalimat itu sengaja diberi atribusi karena belum ada naskah resmi. Mohon konfirmasi Keuchik / tokoh masyarakat: apakah versi ini benar, dan apakah pantas ditampilkan di situs resmi gampong.
 - Tahun berdiri atau tahun pemekaran, bila tercatat
 - Daftar nama Keuchik dari masa ke masa, bila ada catatannya
 

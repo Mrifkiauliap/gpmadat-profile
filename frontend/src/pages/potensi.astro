@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PageHeader from '../components/PageHeader.astro';
-import PlaceholderNotice from '../components/PlaceholderNotice.astro';
 import PotensiCard from '../components/PotensiCard.astro';
 import { potensi } from '../data/potensi';
 ---
@@ -14,8 +13,7 @@ import { potensi } from '../data/potensi';
   />
 
   <section class="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {potensi.map((p) => <PotensiCard {...p} />)}
     </div>
   </section>
