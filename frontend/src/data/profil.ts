@@ -16,10 +16,10 @@ export const profil = {
    * (peta gampong, data statistik gampong, dan letak kantor kecamatan).
    */
   gambaranUmum: [
-    `Gampong Madat adalah salah satu gampong di ${site.kecamatan}, ${site.kabupaten}, Provinsi ${site.provinsi}. Wilayahnya mencakup ${wilayah.luasHektar.toLocaleString("id-ID")} hektar yang terbagi ke dalam ${wilayah.jumlahDusun} dusun, yaitu Dusun ${wilayah.namaDusun.slice(0, -1).join(", Dusun ")}, dan Dusun ${wilayah.namaDusun.at(-1)}.`,
-    "Gampong Madat berkedudukan sebagai pusat pemerintahan Kecamatan Madat. Kantor Camat Madat berada di wilayah gampong ini, sehingga Gampong Madat menjadi simpul layanan publik bagi gampong-gampong di sekitarnya.",
-    "Kedudukan tersebut membuat sarana dan prasarana di Gampong Madat tergolong lengkap untuk ukuran sebuah gampong: mulai dari kantor pemerintahan, Kantor Urusan Agama, Puskesmas, Polsek, dan Koramil, hingga satuan pendidikan yang lengkap dari jenjang dasar sampai menengah atas.",
-    "Sebagian besar warga menggantungkan penghidupan pada sektor pertanian, khususnya persawahan padi, yang ditopang oleh usaha perdagangan, kuliner, peternakan, serta jasa yang tumbuh di sekitar pusat kecamatan.",
+    `Gampong Madat merupakan salah satu gampong di ${site.kecamatan}, ${site.kabupaten}, Provinsi ${site.provinsi}, dengan luas wilayah ${wilayah.luasHektar.toLocaleString("id-ID")} hektar yang terbagi ke dalam ${wilayah.jumlahDusun} dusun, yaitu Dusun ${wilayah.namaDusun.slice(0, -1).join(", Dusun ")}, dan Dusun ${wilayah.namaDusun.at(-1)}.`,
+    "Gampong ini berkedudukan sebagai pusat pemerintahan Kecamatan Madat, ditandai dengan keberadaan Kantor Camat Madat di wilayahnya. Posisi tersebut menjadikan Gampong Madat sebagai simpul layanan publik bagi gampong-gampong di sekitarnya.",
+    "Kedudukan sebagai pusat kecamatan turut membuat sarana dan prasarana di Gampong Madat tergolong lengkap untuk ukuran sebuah gampong, mulai dari kantor pemerintahan, Kantor Urusan Agama, Puskesmas, Polsek, dan Koramil, hingga satuan pendidikan yang berjenjang dari tingkat dasar sampai menengah atas.",
+    "Sebagian besar warga menggantungkan penghidupan pada sektor pertanian, khususnya persawahan padi, yang turut ditopang oleh usaha perdagangan, kuliner, peternakan, tambak, serta jasa yang tumbuh di sekitar pusat kecamatan.",
   ],
 
   /**
@@ -31,8 +31,8 @@ export const profil = {
    * dan hapus kalimat penutup soal penyusunan bila sudah tidak relevan.
    */
   asalUsul: [
-    "Dalam bahasa Indonesia, kata “madat” bermakna candu. Menurut penuturan warga setempat, makna itulah yang dikaitkan dengan asal penamaan Gampong Madat.",
-    "Penuturan tersebut belum dibakukan dalam naskah sejarah resmi. Catatan lengkap mengenai asal-usul nama sekaligus perkembangan gampong dari masa ke masa masih disusun bersama tokoh masyarakat.",
+    "Dalam bahasa Indonesia, kata “madat” bermakna candu. Menurut penuturan warga setempat, makna itulah yang diyakini menjadi asal penamaan Gampong Madat, meski riwayat pastinya masih diwariskan secara lisan dari generasi ke generasi.",
+    "Penuturan tersebut belum dibakukan dalam naskah sejarah resmi. Catatan lengkap mengenai asal-usul nama sekaligus perkembangan gampong dari masa ke masa masih disusun bersama tokoh masyarakat setempat.",
   ] as string[] | null,
 
   // Draf rumusan — sesuaikan dengan dokumen RPJM Gampong bila sudah ada.
@@ -40,9 +40,9 @@ export const profil = {
   misi: [
     "Menyelenggarakan pemerintahan gampong yang transparan, akuntabel, dan melayani.",
     "Meningkatkan kualitas pertanian sebagai penopang utama ekonomi warga.",
-    "Menumbuhkan usaha perdagangan, kuliner, peternakan, dan jasa masyarakat gampong.",
-    "Memelihara sarana pendidikan, kesehatan, dan peribadatan yang telah tersedia.",
-    "Menguatkan nilai keagamaan, adat, serta semangat gotong royong warga.",
+    "Menumbuhkan usaha perdagangan, kuliner, peternakan, tambak, dan jasa masyarakat gampong.",
+    "Memelihara dan mengembangkan sarana pendidikan, kesehatan, dan peribadatan yang telah tersedia.",
+    "Menguatkan nilai keagamaan, adat istiadat, serta semangat gotong royong warga.",
   ],
 
   batasWilayah: [
@@ -57,11 +57,13 @@ export const profil = {
     },
     {
       arah: "Timur",
-      keterangan: "Berbatasan dengan Gampong Blang atau Kecamatan Simpang Ulim",
+      keterangan:
+        "Berbatasan dengan Gampong Blang atau Kecamatan Simpang Ulim",
     },
     {
       arah: "Barat",
-      keterangan: "Berbatasan dengan Gampong Rambong Lop atau Matang Jrok",
+      keterangan:
+        "Berbatasan dengan Gampong Rambong Lop atau Matang Jrok",
     },
   ],
 };
