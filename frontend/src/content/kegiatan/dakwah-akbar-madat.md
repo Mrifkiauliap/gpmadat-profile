@@ -1,7 +1,7 @@
 ---
 title: "Dakwah Akbar Madat"
 date: 2026-07-18
-excerpt: "Dakwah akbar di Gampong Madat menghadirkan tokoh agama dan mempererat silaturahmi warga dalam menyambut program prioritas gampong."
+excerpt: "Dakwah akbar di Gampong Madat menghadirkan Ustadz Puteh RK dan mempererat silaturahmi warga dalam menyambut program prioritas gampong."
 cover: "/images/foto-bersama-dakwah-akbar-1.webp"
 tags: ["Dakwah", "Akbar", "Madat", "Keagamaan"]
 ---
@@ -12,7 +12,7 @@ Gampong Madat, Kecamatan Madat, Aceh Timur — Kegiatan **Dakwah Akbar** sukses 
 
 ### Rangkaian Acara
 
-Acara dibuka dengan sambutan dari **Geuchik Gampong Madat**, yang menyampaikan apresiasi atas antusiasme warga dalam menghadiri kegiatan ini. Dilanjutkan dengan tausiah dari penceramah yang mengangkat tema seputar pentingnya menjaga ukhuwah islamiyah di tengah kehidupan bermasyarakat.
+Acara dibuka dengan sambutan dari **Geuchik Gampong Madat**, yang menyampaikan apresiasi atas antusiasme warga dalam menghadiri kegiatan ini. Dilanjutkan dengan tausiah dari **Ustadz Puteh RK** yang mengangkat tema seputar pentingnya menjaga ukhuwah islamiyah di tengah kehidupan bermasyarakat.
 
 Selain sebagai sarana syiar dakwah, kegiatan ini juga dimanfaatkan untuk menyampaikan beberapa **program prioritas gampong** tahun ini kepada warga, sehingga masyarakat dapat lebih memahami arah pembangunan yang sedang dan akan dijalankan.
 
