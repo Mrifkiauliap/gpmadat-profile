@@ -51,4 +51,14 @@ export const galeri: GaleriItem[] = [
     gambar: "/images/pemasangan-plang-dusun.webp",
     tanggal: "2026-07-24",
   },
+  {
+    judul: "Foto Bersama Dakwah Akbar Gampong Madat",
+    gambar: "/images/foto-bersama-dakwah-akbar-1.webp",
+    tanggal: "2026-07-18",
+  },
+  {
+    judul: "Kegiatan Dakwah Akbar Gampong Madat",
+    gambar: "/images/foto-bersama-dakwah-akbar-2.webp",
+    tanggal: "2026-07-18",
+  },
 ];

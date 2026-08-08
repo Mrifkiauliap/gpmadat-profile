@@ -2,7 +2,7 @@
 title: "Dakwah Akbar Madat"
 date: 2026-07-18
 excerpt: "Dakwah akbar di Gampong Madat menghadirkan tokoh agama dan mempererat silaturahmi warga dalam menyambut program prioritas gampong."
-cover: "/images/placeholder-kegiatan.svg"
+cover: "/images/foto-bersama-dakwah-akbar-1.webp"
 tags: ["Dakwah", "Akbar", "Madat", "Keagamaan"]
 ---
 
@@ -22,6 +22,6 @@ Kehadiran warga dari berbagai kalangan usia — mulai dari anak-anak, remaja, hi
 
 Kegiatan ini diharapkan dapat menjadi agenda rutin yang terus mempererat hubungan antarwarga sekaligus memperkuat nilai-nilai keislaman di Gampong Madat.
 
----
+## Dokumentasi Kegiatan
 
-_Foto dokumentasi kegiatan ini masih dalam proses pengumpulan dan akan ditambahkan menyusul._
+![Suasana Dakwah Akbar Gampong Madat](/images/foto-bersama-dakwah-akbar-2.webp)
