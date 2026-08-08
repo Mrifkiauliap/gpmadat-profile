@@ -56,3 +56,9 @@ Melalui lomba adzan dan surah pendek, anak-anak didorong untuk lebih percaya dir
 Selain memberikan pengalaman bagi peserta, kegiatan ini juga menjadi ruang bagi masyarakat dari berbagai dusun untuk berkumpul dan berinteraksi dalam suasana yang positif.
 
 Dengan adanya **Lomba Adzan dan Surah Pendek Antar Dusun Gampong Madat Tahun 2026**, diharapkan semangat keagamaan, keberanian anak-anak, serta kebersamaan antar dusun dapat terus tumbuh melalui kegiatan-kegiatan positif di Gampong Madat.
+
+## Dokumentasi Kegiatan
+
+![Foto Bersama Panitia Lomba Adzan dan Surah Pendek](/images/foto-bersama-panitia-lomba-adzan-surah-pendek.webp)
+
+![Pembagian Hadiah Lomba Adzan dan Surah Pendek](/images/pembagian-hadiah-lomba-adzan-surah-pendek.webp)
