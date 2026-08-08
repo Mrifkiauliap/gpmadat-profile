@@ -1,41 +1,58 @@
 ---
 title: "Lomba Adzan dan Surah Pendek Antar Dusun Gampong Madat"
 date: 2026-08-08
-excerpt: "Kegiatan lomba adzan dan hafalan surah pendek antar dusun sebagai wadah bagi anak-anak Gampong Madat untuk meningkatkan keberanian, kemampuan membaca Al-Qur'an, dan semangat keagamaan."
+excerpt: "Lomba adzan dan surah pendek tahun 2026 mempertemukan anak-anak dari empat dusun Gampong Madat dalam kegiatan keagamaan yang mendorong keberanian, hafalan, dan semangat belajar Al-Qur'an."
 cover: "/images/lomba-adzan-surah-pendek.webp"
 tags: ["Keagamaan", "Lomba", "Gampong Madat", "KKN"]
 ---
 
-Kegiatan **Lomba Adzan dan Surah Pendek Antar Dusun Gampong Madat** dilaksanakan sebagai salah satu kegiatan yang melibatkan anak-anak dari beberapa dusun di Gampong Madat. Kegiatan ini menjadi wadah bagi anak-anak untuk menunjukkan kemampuan mereka dalam mengumandangkan adzan serta menghafalkan surah-surah pendek.
+**Lomba Adzan dan Surah Pendek Antar Dusun Gampong Madat Tahun 2026** dilaksanakan sebagai kegiatan keagamaan yang melibatkan anak-anak dari empat dusun di Gampong Madat. Kegiatan ini mempertemukan perwakilan dari **Dusun Cot Madat, Dusun Ali Tawil, Dusun Abeuk Gadeng, dan Dusun Kayee Unoe** dalam suasana perlombaan yang sekaligus menjadi ruang bagi anak-anak untuk belajar, mengasah kemampuan, dan membangun keberanian.
 
-Kegiatan berlangsung dengan dukungan masyarakat dan perangkat gampong, serta melibatkan mahasiswa KKN Kelompok 29 Universitas Samudra dalam membantu persiapan dan pelaksanaan kegiatan.
+Kegiatan ini diselenggarakan oleh mahasiswa **KKN Kelompok 29 Universitas Samudra** sebagai panitia pelaksana dengan dukungan dari aparatur gampong, para kepala dusun, serta masyarakat. Kolaborasi tersebut mencakup koordinasi peserta, persiapan teknis, penyediaan kebutuhan kegiatan, hingga dukungan pendanaan sehingga perlombaan dapat terlaksana sebagai kegiatan bersama.
 
-## Rangkaian Perlombaan
+## Peserta dari Empat Dusun
 
-Perlombaan terdiri dari dua kategori utama, yaitu **lomba adzan** dan **lomba surah pendek**. Peserta berasal dari anak-anak perwakilan dusun di Gampong Madat yang mengikuti perlombaan secara bergantian.
+Perlombaan diikuti oleh anak-anak yang mewakili masing-masing dusun di Gampong Madat. Keempat dusun yang berpartisipasi meliputi:
 
-Pada lomba adzan, peserta dinilai berdasarkan beberapa aspek seperti kelancaran lafaz, ketepatan bacaan, suara, serta keberanian dalam mengumandangkan adzan di hadapan para peserta dan masyarakat.
+- Dusun Cot Madat
+- Dusun Ali Tawil
+- Dusun Abeuk Gadeng
+- Dusun Kayee Unoe
 
-Sementara itu, pada lomba surah pendek, peserta membacakan surah yang telah dihafalkan. Kegiatan ini tidak hanya menguji hafalan, tetapi juga mendorong anak-anak untuk lebih terbiasa membaca Al-Qur'an dengan baik dan percaya diri.
+Keterlibatan keempat dusun menjadikan kegiatan ini tidak hanya sebagai ajang kompetisi, tetapi juga sebagai kesempatan untuk mempererat silaturahmi dan kebersamaan antarwarga.
 
-## Peran Mahasiswa KKN
+## Dua Kategori Perlombaan
 
-Mahasiswa KKN turut membantu dalam berbagai kebutuhan selama kegiatan berlangsung, mulai dari persiapan tempat hingga mendampingi jalannya perlombaan.
+Perlombaan terdiri dari dua kategori, yaitu **lomba adzan** dan **lomba surah pendek**.
 
-Beberapa bentuk keterlibatan mahasiswa antara lain:
+Pada kategori adzan, peserta menunjukkan kemampuan dalam mengumandangkan adzan di hadapan juri dan masyarakat. Kegiatan ini menjadi sarana bagi anak-anak untuk melatih keberanian tampil di depan umum sekaligus meningkatkan kemampuan dalam melafalkan bacaan adzan dengan baik.
 
-- Membantu mempersiapkan tempat dan perlengkapan perlombaan
-- Membantu mengatur peserta dari masing-masing dusun
-- Mendampingi jalannya perlombaan agar berlangsung tertib
-- Membantu dokumentasi kegiatan
-- Berkoordinasi dengan masyarakat dan pihak gampong selama kegiatan berlangsung
+Sementara itu, pada kategori surah pendek, peserta menunjukkan hafalan surah-surah pendek yang telah dipelajari. Peserta tidak hanya dituntut untuk menguasai hafalan, tetapi juga memperhatikan kelancaran dan ketepatan bacaan.
 
-Melalui keterlibatan tersebut, mahasiswa tidak hanya membantu pelaksanaan kegiatan, tetapi juga ikut berinteraksi secara langsung dengan anak-anak dan masyarakat Gampong Madat.
+## Mahasiswa sebagai Panitia Pelaksana
 
-## Membangun Keberanian dan Semangat Keagamaan
+Mahasiswa KKN Kelompok 29 Universitas Samudra berperan sebagai **panitia pelaksana** yang terlibat langsung sejak tahap persiapan hingga kegiatan selesai. Panitia mahasiswa bertanggung jawab dalam mengatur berbagai kebutuhan teknis agar perlombaan dapat berjalan dengan tertib.
 
-Lomba ini bukan sekadar ajang untuk menentukan pemenang. Lebih dari itu, kegiatan menjadi sarana untuk menumbuhkan keberanian anak-anak dalam tampil di depan umum sekaligus meningkatkan kecintaan terhadap kegiatan keagamaan.
+Beberapa tugas yang dilakukan meliputi:
 
-Persaingan antar peserta juga diharapkan dapat memberikan pengalaman positif dan memotivasi anak-anak untuk terus belajar, menghafal Al-Qur'an, serta meningkatkan kemampuan mereka dalam mengumandangkan adzan.
+- Mempersiapkan teknis dan susunan pelaksanaan lomba
+- Mengoordinasikan peserta dari masing-masing dusun
+- Menyiapkan tempat dan perlengkapan kegiatan
+- Mengatur alur peserta dan jalannya perlombaan
+- Berkoordinasi dengan aparatur gampong, kepala dusun, dan masyarakat
+- Mendokumentasikan rangkaian kegiatan
+- Menjaga ketertiban selama perlombaan berlangsung
 
-Dengan adanya kegiatan seperti ini, semangat keagamaan di lingkungan Gampong Madat dapat terus ditumbuhkan melalui kegiatan yang melibatkan anak-anak dan masyarakat secara langsung.
+Dalam pelaksanaannya, mahasiswa mendapat dukungan langsung dari aparatur gampong, para kepala dusun, dan masyarakat. Dukungan tersebut diberikan dalam berbagai bentuk, mulai dari membantu koordinasi peserta dan persiapan di lapangan hingga memberikan dukungan pendanaan untuk memenuhi kebutuhan kegiatan.
+
+Kerja sama antara mahasiswa, aparatur gampong, dan masyarakat menjadi bagian penting dalam terselenggaranya perlombaan. Kegiatan ini sekaligus menunjukkan bahwa program KKN dapat berjalan melalui kolaborasi antara mahasiswa dan masyarakat dalam mengadakan kegiatan yang bermanfaat bagi lingkungan gampong.
+
+## Menumbuhkan Keberanian dan Semangat Keagamaan
+
+Lomba ini tidak hanya berorientasi pada hasil atau penentuan pemenang. Keikutsertaan anak-anak dari berbagai dusun memberikan kesempatan bagi mereka untuk tampil di depan umum, menguji kemampuan, serta mendapatkan pengalaman berkompetisi secara positif.
+
+Melalui lomba adzan dan surah pendek, anak-anak didorong untuk lebih percaya diri dalam menunjukkan kemampuan yang telah mereka pelajari sekaligus meningkatkan semangat untuk menghafal dan membaca Al-Qur'an.
+
+Selain memberikan pengalaman bagi peserta, kegiatan ini juga menjadi ruang bagi masyarakat dari berbagai dusun untuk berkumpul dan berinteraksi dalam suasana yang positif.
+
+Dengan adanya **Lomba Adzan dan Surah Pendek Antar Dusun Gampong Madat Tahun 2026**, diharapkan semangat keagamaan, keberanian anak-anak, serta kebersamaan antar dusun dapat terus tumbuh melalui kegiatan-kegiatan positif di Gampong Madat.
