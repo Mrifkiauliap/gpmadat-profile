@@ -12,6 +12,21 @@ export interface GaleriItem {
  */
 export const galeri: GaleriItem[] = [
   {
+    judul: "Pembagian Hadiah Lomba Adzan dan Surah Pendek",
+    gambar: "/images/pembagian-hadiah-lomba-adzan-surah-pendek.webp",
+    tanggal: "2026-08-08",
+  },
+  {
+    judul: "Foto Bersama Panitia Lomba Adzan dan Surah Pendek",
+    gambar: "/images/foto-bersama-panitia-lomba-adzan-surah-pendek.webp",
+    tanggal: "2026-08-08",
+  },
+  {
+    judul: "Peserta Lomba Adzan dan Surah Pendek Antar Dusun",
+    gambar: "/images/peserta-lomba-adzan-surah-pendek.webp",
+    tanggal: "2026-08-08",
+  },
+  {
     judul: "Posyandu Balita Gampong Madat",
     gambar: "/images/posyandu-balita.webp",
     tanggal: "2026-08-06",

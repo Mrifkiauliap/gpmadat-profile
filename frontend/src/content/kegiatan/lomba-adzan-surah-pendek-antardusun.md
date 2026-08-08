@@ -2,7 +2,7 @@
 title: "Lomba Adzan dan Surah Pendek Antar Dusun Gampong Madat"
 date: 2026-08-08
 excerpt: "Lomba adzan dan surah pendek tahun 2026 mempertemukan anak-anak dari empat dusun Gampong Madat dalam kegiatan keagamaan yang mendorong keberanian, hafalan, dan semangat belajar Al-Qur'an."
-cover: "/images/lomba-adzan-surah-pendek.webp"
+cover: "/images/peserta-lomba-adzan-surah-pendek.webp"
 tags: ["Keagamaan", "Lomba", "Gampong Madat", "KKN"]
 ---
 
